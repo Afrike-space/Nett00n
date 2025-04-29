@@ -1,0 +1,1781 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex; /* Allows alignment control */
+  flex-direction: column; /* Ensures vertical stacking */
+  justify-content: center; /* Centers content vertically if needed */
+  align-items: center; /* Centers content horizontally */
+  text-align: center; /* Keeps text centered */
+  background-color: white; 
+  font-family: 'Poppins', sans-serif;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0; 
+  min-height: 100vh; /* Ensures full height on all screens */
+}
+
+
+.container {
+  position: fixed;
+  background-color:white;
+  display: flex;
+  flex: 1;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  object-fit: cover;
+  top: 0px;
+  float: left;
+  width: 100%;
+  height: auto;
+  max-height:54px ;
+  border-radius: 0px;
+  left: 0px;
+  border-style: none;
+  z-index: 1;
+  margin-bottom: 0px;
+  justify-content: space-between;
+}
+
+
+
+.Table {
+  position: relative; /* Positioning context for child elements */
+  min-width: 12%; /* Allow slight flexibility */
+  max-width: 16%; /* Prevent excessive stretching */
+  height: 2.8rem; /* Maintain proportional height */
+  background-color: transparent;/* Debugging background */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center; /* Ensure vertical alignment */
+  justify-content: center; /* Ensure horizontal centering */
+}
+
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 0.9rem; /* Increased size for better readability */
+  font-weight: 800; /* Slightly bolder */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 3;
+  background-color: transparent;
+  margin-left: 0px;
+}
+
+/* NET and TOON Styling */
+.net-text {
+  background:red;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 2px;
+}
+
+.toon-text {
+  background: black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-left: 5px;
+}
+
+/* Shorts Styling */
+.shorts-text {
+  color: white;
+  font-size: 0.8em;
+  font-weight: bold;
+  background:red;
+  padding: 2px 6px;
+  border-radius: 5px;
+  margin-left: 8px;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+}
+
+/* Dark Mode */
+.dark-mode .net-text {
+  background:red;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark-mode .toon-text {
+  background:yellow;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark-mode .shorts-text {
+  background:red;
+  color: white;
+}
+
+
+/* Remove underline from anchor tags */
+a, .net-text, .toon-text {
+  text-decoration: none;
+}
+
+
+.nav {
+  position: absolute;
+  width: 84.5%;
+  float: left;
+  margin-left: 15.3vw; /* Adjusted for responsiveness */
+  height: auto;
+  background-color: transparent;
+  margin-top: 0;
+  display: flex;
+  flex: 1;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center; /* Center items vertically */
+  justify-content: space-around; /* Center items horizontally */
+  gap: 5vw;
+  max-height: 5.4vh; /* Adjusted for better height scaling */
+  margin-bottom: 1vh;
+}
+
+/* Main search container */
+.search {
+  display: flex;
+  position: relative;
+  width: 90%;
+  max-width: 650px;
+  height: auto;
+  background-color:transparent;
+  margin: 2vh auto;
+  border-radius: 7px; /* Makes it more stylish */
+  align-items: center;
+  border: 0.3px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for elegance */
+  transition: all 0.3s ease-in-out;
+  margin-top: 15px;
+}
+
+/* Search input field */
+.search input[type="search"] {
+  flex: 1;
+  height: 4.5vh;
+  min-height: 30px;
+  max-height: 30px;
+  border-radius: 7px; /* Makes it more stylish */
+  background-color:transparent;
+  border: none;
+  padding: 0.7rem 3rem 0.7rem 2.5rem; /* Adjust spacing */
+  color: #333;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Search input focus effect */
+.search input[type="search"]:focus {
+  border: 1px solid white;
+  box-shadow: 0px 0px 8px none;
+}
+
+
+/* Clear button */
+.clear-btn {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #666;
+  display: none; /* Hidden by default */
+}
+
+/* Show clear button when text is entered */
+.search input[type="search"]:valid ~ .clear-btn {
+  display: block;
+}
+
+
+/* Dark mode input */
+body.dark-mode .search input[type="search"] {
+  color: #fff;
+}
+
+/* Placeholder styling */
+.search input[type="search"]::placeholder {
+  color: #36454F;
+  font-size: 0.9rem; /* Ensures readability */
+}
+
+body.dark-mode .search input[type="search"]::placeholder {
+  color: #D3D3D3;
+}
+
+/* Search Icon Styling */
+.search .search-icon {
+  position: absolute;
+  right: 12px; /* Adjust distance for better alignment */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  min-width: 20px;
+  min-height: 20px;
+  background-color:transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hide the clear button across all browsers */
+.search input[type="search"]::-webkit-search-decoration,
+.search input[type="search"]::-webkit-search-cancel-button,
+.search input[type="search"]::-webkit-search-results-button,
+.search input[type="search"]::-webkit-search-results-decoration {
+  display: none; 
+}
+
+/* Prevent autofill background color change */
+.search input[type="search"]:-webkit-autofill,
+.search input[type="search"]:-webkit-autofill:hover,
+.search input[type="search"]:-webkit-autofill:focus,
+.search input[type="search"]:-webkit-autofill:active {
+  background-color: white !important;
+  color: #333 !important;
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  box-shadow: 0 0 0px 1000px white inset !important;
+  transition: background-color 5000s ease-in-out 0s; /* Prevent flickering */
+}
+
+.upload {
+  position: relative;
+  width: 3vw;
+  height: 3vw;
+  background-color: transparent;
+  margin-top: 0;
+  margin-left: 1vw;
+  border-radius: 50%;
+}
+
+.upload img {
+  width: 2.4vw;
+  height: 2.4vw;
+  margin-top: 0.2vh;
+  padding: 0.5vh;
+  margin-left: 0.2vw;
+}
+
+
+.upload:hover .tooltip
+{
+visibility: visible;
+opacity: 1;
+
+}
+
+
+
+/* Notifications Icon */
+.Notifications {
+  position: relative;
+  width: 3vw;
+  height: 3vw;
+  background-color: transparent;
+  margin-top: 0.3125rem; /* Converted from 5px */
+  margin-left: 1.25rem; /* Converted from 20px */
+  margin-bottom: 0.1875rem; /* Converted from 3px */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.Notifications img {
+  width: 2vw;
+  height: 2vw;
+  margin-top: 0.4375rem; /* Converted from 7px */
+}
+
+/* Notification Dropdown */
+.Notification-container {
+  display: none; /* Hidden by default */
+  position: absolute;
+  width: 24%;
+  height: auto;
+  background-color: #333; /* Dark mode background */
+  min-width: 11.25em; /* 180px */
+  box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.2);
+  top: 100%; /* Always appears below the icon */
+  right: 1%; /* Align to the right edge of the icon */
+  border-radius: 0.5em; /* Rounded corners */
+  max-height: 40em; /* Prevents it from growing too tall */
+  overflow-y: auto; /* Enables scrolling if too many notifications */
+  z-index: 30;
+  padding: 1rem;
+  color: white;
+}
+
+/* Active class to show the container */
+.Notification-container.active {
+  display: block;
+}
+
+.Theme {
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Center vertically */
+  cursor: pointer; /* Pointer for hover effect */
+}
+.Theme img {
+  width: 1.6875em; /* Converted from 27px */
+  height: 1.6875em;
+  border-radius: 50%; /* Circular profile image */
+  margin-left: 1em; /* Converted from 10px */
+}
+
+
+.Account {
+  position: relative;
+  width: 3vw;
+  height: 3vw;
+  background-color: transparent;
+  margin: 0 1.5625rem 0.1875rem 0; /* Converted from 25px, 3px */
+  display: flex; /* Flexbox for alignment */
+  align-items: center;
+  border-radius: 50%;
+  margin-top: 0.3125rem; /* Converted from 5px */
+  float: right;
+  margin-right: 1rem;/* Converted from 30px */
+}
+
+.Account img {
+  width: 2vw;
+  height: 2vw;
+  float: left;
+  margin-left: 0.4rem; /* Converted from 5px */
+  border-radius: 50%;
+}
+
+.account-dropdown {
+  position: relative; /* Position for dropdown */
+  display: inline-block; /* Align with other elements */
+}
+
+
+.dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute;
+  width: 24%;
+  height: auto;
+  background-color: #333; /* Example background for dark mode */
+  min-width: 11.25em; /* Converted from 180px */
+  box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.2);
+  margin-top:28%; /* Adjusted to percentage for better scaling */
+  float: left;
+  margin-left: 100%; /* Centering based on container width */
+  transform: translateX(-50%); /* Ensures it remains centered */
+  border-radius: 0.5em; /* Converted from 7px */
+  max-height: 40em; /* Converted from 600px */
+  z-index: 50;
+}
+
+
+.dropdown-content a {
+  
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; /* Make links block elements */
+}
+
+.proofile {
+  width: 85%;
+  min-height: 1.875em; /* Converted from 30px (30px / 16) */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: white;
+  padding: 0.625em; /* Converted from 10px */
+  border-radius: 0.4375em; /* Converted from 7px */
+  max-width: 90%; /* Avoid hard-coded px for better scaling */
+}
+
+
+/* Hover effect while scrolling */
+.proofile:hover {
+  background-color: white;/* Change background color to purple */
+  color: white; /* Change text color to white */
+  transform: scale(1.05); /* Slightly increase size */
+  cursor: pointer; /* Change cursor */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+
+.proofile img {
+  width: 1.6875em; /* Converted from 27px */
+  height: 1.6875em;
+  border-radius: 50%; /* Circular profile image */
+  margin-right: 0.625em; /* Converted from 10px */
+}
+
+.proofile label {
+  font-weight: bold;
+  font-size: 0.875em; /* Converted from 14px */
+  color: black;
+  margin-left: 0.3125em; /* Converted from 5px */
+  text-align: left; /* Align text properly */
+  max-width: 100%; /* Ensure text doesn’t exceed div */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdown-content li {
+  list-style: none; /* Remove bullet points */
+}
+
+
+/* Show the dropdown on hover */
+.account-dropdown:hover .dropdown-content {
+  display: block; /* Show dropdown when hovering over Account */
+}
+
+/* Optional: Add transition for smoother appearance */
+.dropdown-content {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+
+.tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  z-index: 1;
+  margin-top: 0;
+  padding: 0.3125em; /* Converted from 5px */
+  border-radius: 0.25em; /* Slight rounding for better UI */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+  transform: translateY(5px); /* Smooth pop-up effect */
+}
+
+.upload:hover .tooltip, 
+.Notifications:hover .tooltip, 
+.Account:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Container 11 Styling */
+.container-11 {
+  position: relative;
+  width: 100%;
+  min-height: 6.25rem; /* 100px */
+  margin-top: 3.625rem; /* 58px */
+  border-radius: 0.4375rem; /* 7px */
+  background-color: transparent;
+}
+
+.container-11 img {
+  width: 97%;
+  height: 15rem; /* 240px */
+  border-radius: 7px;
+  z-index: -1;
+  object-fit: fill; /* Consider 'cover' for better aspect ratio handling */
+  margin-bottom: 0.625rem; /* 10px */
+  margin-left: 0.5%;
+}
+
+/* Profile Picture Styling */
+.pichaa img {
+  width: 20%;
+  max-width: 90vw; /* Ensures the image doesn't exceed 90% of the viewport width */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 50%; /* Creates a circular image */
+  margin-top: 5vh;
+  margin-bottom: 2vh;
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+/* Name Label Styling */
+.Name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh;
+  margin-top: 2vh;
+}
+
+.Name label {
+  width: 30%;
+  height: 100%;
+  background-color: transparent;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #36454F;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.container-11 {
+  position: relative;
+  width: 100%;
+  min-height: 6.25rem; /* 100px */
+  margin-top: 3.625rem; /* 58px */
+  border-radius: 0.4375rem; /* 7px */
+  background-color: transparent;
+}
+
+/* Profile Background Image */
+.container-11 img {
+  width: 100%;
+  height: 15rem; /* 240px */
+  border-radius: 0.4375rem; /* 7px */
+  object-fit: cover; /* Ensures proper image scaling */
+  margin: 0.625rem 0 0.625rem 0.5%; /* 10px top/bottom, 0.5% left */
+}
+
+/* Profile Picture */
+.pichaa img {
+  width: 20%;
+  max-width: 90vw; /* Ensures the image doesn't exceed 90% of the viewport width */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 50%; /* Creates a circular image */
+  margin: 5vh 0 2vh; /* 5% top, 2% bottom */
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+
+/* Name Section */
+.Name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5vh; /* 5% of viewport height */
+  margin-top: 2vh; /* 2% of viewport height */
+}
+
+.Name label {
+  width: 30%;
+  height: 100%;
+  background-color: transparent;
+  font-size: 2rem; /* Scales with root font size */
+  font-weight: bold;
+  color: #36454F;
+  padding: 1rem; /* Scales with root font size */
+  border-radius: 0.5rem; /* Scales with root font size */
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.container-2 {
+  position: relative;
+  width: 99.78%;
+  height: auto;
+  min-height: 200px;
+  max-height: 500px;
+  background-color: transparent;
+  margin-left: 0%;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  padding: 0rem; /* optional spacing inside */
+}
+
+.Title {
+  width: 99%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 7px;
+  margin-bottom: 1rem; /* spacing below title */
+}
+
+.Title label {
+  font-weight: bold;
+  color:black;
+  font-size: clamp(1.5rem, 1vw, 3rem);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.Profile-description {
+  width: 100%;
+  background-color: transparent;
+  height: auto;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+#toggleBtn {
+  display: inline-block;
+  color:purple; /* Change this to your preferred color */
+  font-weight: bold;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  text-decoration: none; /* Remove underline if you want */
+  transition: color 0.3s ease;
+}
+
+#toggleBtn:hover {
+  color:green; /* Optional: color on hover */
+}
+
+
+/* Stats Container */
+.container-3 {
+  position: relative;
+  width:99.5%;
+  height: 3rem; /* Responsive height */
+  background-color: transparent;
+  display: flex;
+  justify-content: space-evenly; /* Evenly distributes children */
+  gap: 3vw; /* Dynamic gap */
+  border-radius: 0.5rem;
+  border-style: ridge;
+  border: 1px solid #ccc; /* Set a very thin border */
+  margin-top: 20px;
+}
+
+/* Individual Stat Boxes */
+.viewws,
+.followers,
+.videos,
+.follow,
+.country {
+  flex: 1; /* Allows boxes to grow equally */
+  max-width: 12%; /* Prevents excessive growth */
+  min-width: 9%; /* Prevents shrinking too small */
+  height: 2.5rem;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 4px;
+  gap: 3px;
+}
+
+/* Country Box Specifics */
+.country {
+  max-width: 20%;
+  min-width: 10%;
+}
+
+/* Icons within Stat Boxes */
+.viewws img,
+.followers img,
+.videos img,
+.country img,
+.follow img {
+  width: 2.5vw; /* Scales with viewport */
+  height: 2.5vw;
+  margin-left: 0.5rem;
+}
+
+/* Labels within Stat Boxes */
+.viewws label,
+.followers label,
+.videos label,
+.follow label,
+.country label {
+  flex-grow: 1; /* Allow dynamic expansion */
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: transparent;
+  padding: 3px;
+  margin-right: 3px;
+  border-radius: 0.5rem;
+  color: #333333;
+}
+
+
+.video-container {
+  position: relative; /* Changed from absolute to relative for better flow */
+  width:99.5%;
+  background-color: transparent;
+  border-radius: 0.4375rem; /* 7px */
+  overflow: hidden; /* Ensures content stays within bounds */
+  border-style: ridge;
+  border: 1px solid #ccc; /* Set a very thin border */
+  margin-top: 20px;
+}
+
+/* Fallback for older browsers */
+.containerr {
+  position:absolute;
+  width: 45%;
+  margin-left: 1%;
+  margin-top: 1.5rem; /* 20px */
+  border-radius: 0.4375rem; /* 7px */
+  background-color: transparent;
+  overflow: hidden;
+  border-style: ridge;
+  border: 1px solid #ccc; /* Set a very thin border */
+}
+
+.containerr::before {
+  content: "";
+  display: block;
+  padding-top: 56.25%; /* Maintains aspect ratio */
+}
+
+.containerr video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0.4375rem; /* 7px */
+  object-fit: cover;
+}
+
+
+.rectangle {
+  width: 50%;
+  height: auto;  background-color: transparent;
+float:right;
+margin-right: 5px;
+margin-top: 20px;
+}
+
+
+/* Square container */
+.square {
+  
+  aspect-ratio: 1 / 1; /* Ensures a square aspect ratio */
+  width: 100%;
+  height: clamp(2.5rem, 3vw, 3rem); /* Responsive height */
+  border-style: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center; /* Maintain vertical alignment */
+  overflow: hidden;
+}
+.square img {
+  width: clamp(2rem, 12%, 2.5rem); /* Responsive width */
+  height: clamp(2rem, 12%, 2.5rem); /* Responsive height */
+  border-radius: 50%; /* Creates a circular image */
+  margin-left: clamp(3rem, 7vw, 5.25rem); /* Responsive left margin */
+  margin-top: clamp(0.1rem, 1vw, 0.1rem); /* Responsive top margin */
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+}
+.square label {
+  flex-grow: 1;
+  min-width: 2.25rem; /* Ensures a minimum width */
+  max-width: 12.25rem; /* Ensures a maximum width */
+  height: auto;
+  max-height: 1.25rem; /* 20px */
+  padding: 0.625rem; /* 10px */
+  background-color: transparent;
+  margin-left: 3.125rem; /* 50px */
+  margin-top: 0;
+  color: #36454F;
+  font-weight: bold;
+  font-size: 1.2rem;
+  white-space: nowrap; /* Prevents text wrapping */
+  overflow: hidden; /* Hides overflow text */
+  text-overflow: ellipsis; /* Adds ellipsis for overflow */
+  text-align: center; /* Centers text inside label */
+  flex-shrink: 1; /* Allows the label to shrink */
+  border-radius: 0.4375rem; /* 7px */
+}
+
+/* Caption container */
+.caaption {
+  position: relative;
+  width: 100%;
+  height: 1.875rem; /* Converted 30px to rem */
+  background-color: transparent;
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  overflow: hidden; /* Hide overflow content */
+  flex: 1; /* Allow this section to take available space */
+}
+
+/* Caption label */
+.caaption label {
+  color: black;
+  font-weight: bolder;
+  font-size: 1.25rem; /* Converted 20px to rem */
+  padding: 0.3125rem; /* Converted 5px to rem */
+  margin-top: 0.3125rem; /* Converted 5px to rem */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Show ellipsis for overflow */
+  text-align: center; /* Center text inside label */
+  flex-shrink: 1; /* Allow the label to shrink */
+  max-width: 100%; /* Ensure it doesn't exceed the container */
+}
+/* About section */
+.about {
+  width: 100%;
+  margin-top: 0.0625rem; /* 1px */
+  background-color:transparent;
+  border-radius: 0; /* Removed unnecessary conversion */
+  color: #000; /* Ensures text is black for better readability */
+  font-weight: normal;
+  margin-bottom: 0; /* Removed unnecessary conversion */
+  overflow: hidden;
+  max-height: 18.75rem; /* 300px */
+ /* Added padding for better spacing */
+  box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
+}
+/* Main Section Container */
+.secction {
+  width: 100%;
+  height: clamp(3vh); /* Responsive height */
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: clamp(0.5rem, 1.5vw, 1.5rem); /* Responsive gap */
+  margin-top:0px; /* Responsive top margin */
+  justify-content: space-evenly;
+  border-style:none;
+  margin-bottom: 5px;
+ 
+}
+
+/* Shared Styles for Icon Containers */
+.viewss, .commentss, .likee, .dislikee, .optionn, .timess {
+  flex: 1; /* Equal flex value for consistent sizing */
+  max-width: 18%; /* Prevents excessive stretching */
+  height: clamp(1.8rem, 3vh, 2rem); /* Responsive height */
+  background-color: #F5F5F5;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 3.5rem; /* Ensures visibility on small screens */
+}
+
+/* Adjusted Flex for 'timess' Section */
+.timess {
+  flex: 1.5; /* Slightly larger than others */
+  min-width: 6rem; /* Ensures visibility on small screens */
+}
+
+/* Icon Images */
+.viewss img, .commentss img, .likee img, .dislikee img, .timess img, .optionn img {
+  width: clamp(1.5rem, 2.5vh, 3rem); /* Responsive sizing */
+  height: clamp(1.5rem, 2.5vh, 3rem);
+  padding: 0.2rem;
+}
+
+/* Labels Inside Icon Containers */
+.viewss label, .commentss label, .likee label, .dislikee label, .timess label, .optionn label {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: clamp(14.5px, 1vw, 15px); /* Responsive font size */
+}
+
+.container-4 {
+  position: relative;
+  width:99.5%;
+  height: 3rem; /* Responsive height */
+  margin: 1.25rem auto 1.125rem; /* Centered with auto */
+  background-color: transparent;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-evenly; /* Even distribution */
+  gap: 3vw; /* Dynamic gap */
+  border-radius: 0.5rem;
+  margin-top: 30px;
+  border-style: ridge;
+  border: 1px solid #ccc; /* Set a very thin border */
+}
+
+/* Shared styles for navigation items */
+.my-videos,
+.watchlist,
+.favorites,
+.playlist,
+.community {
+  flex: 1; /* Allow items to grow equally */
+  max-width: 13%; /* Prevents excessive stretching */
+  min-width: 10%; /* Ensures visibility on small screens */
+  height: 2.5rem;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  gap: 3px;
+  margin-top:4px;
+}
+
+/* Images inside navigation items */
+.my-videos img,
+.watchlist img,
+.favorites img,
+.playlist img,
+.community img {
+  width: 2.5vw; /* Scales with viewport */
+  height: 2.5vw;
+  margin-left: 0.5rem;
+}
+
+/* Labels inside navigation items */
+.my-videos label,
+.watchlist label,
+.favorites label,
+.playlist label,
+.community label {
+  flex: 1; /* Allow text to take available space */
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: transparent;
+  padding: 3px;
+  margin-right: 3px;
+  border-radius: 0.5rem;
+  color: #333333;
+}
+
+/* Specific adjustment for favorites */
+.favorites {
+  gap: 8px;
+}
+
+
+.container-1 {
+  position: relative;
+  flex: 1;
+  width:99.5%;
+  height: auto;
+  margin-left:0%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color:transparent;
+  border-radius: 7px;
+  top: 0.4em;
+  overflow: hidden;
+  padding: 1rem 0;
+  gap: 2rem;
+  border-style: ridge;
+  border: 1px solid #ccc; /* Set a very thin border */
+  justify-content: flex-start;
+  clear: both; /* 💥 This line makes it ignore container-2's float */
+}
+
+/* Individual Video Containers */
+.kontainer {
+  position: relative;
+  width: clamp(29%, 2.1875rem, 32%); /* Ensures adaptive sizing */
+  height: auto;
+  background-color: transparent;
+  border-radius: 0.5rem; /* 7px */
+  margin-bottom: 0.5rem; /* 30px */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  margin-left: 2%; 
+  margin-top: 0px;
+  border-style: ridge;
+  border: 1px solid #ccc; /* Set a very thin border */
+}
+/* Video Thumbnails */
+.kontainer img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  object-fit: cover; /* Ensures consistent scaling */
+}
+
+
+/* Profile Section */
+.profilee {
+  width: 90.8%;
+  height: 2rem; /* 40px */
+  border-radius: 0rem; /* 7px */
+  background-color: transparent;
+  display:none;
+  align-items: center;
+  gap: 0.625rem; /* 10px */
+  padding: 0.3125rem 1rem; /* Adds subtle spacing */
+  margin-bottom: 0rem;
+  max-width: 100%;
+}
+
+/* Profile Image */
+.profilee img {
+  width: 2.2rem; /* 35px converted to rem */
+  height: 2.2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: transparent;
+}
+
+/* Profile Name Container */
+.profilee-name {
+  flex-grow: 1;
+  height: auto;
+  background-color: transparent;
+  border-radius: 0rem;
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Profile Name Label */
+.profilee-name label {
+  font-size: 1.125rem; /* Adjusted for better scaling */
+  font-weight: 700;
+  color: #36454F;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  padding: 0.3125rem;
+  margin-left: 10px;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .profilee {
+    padding: 0.3125rem 0.75rem;
+  }
+
+  .profilee img {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .profilee-name label {
+    font-size: 0.9375rem; /* Slightly smaller text */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .profilee {
+    flex-direction: row;
+    align-items: center;
+    padding: 0.3125rem 0.5rem;
+  }
+
+  .profilee img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .profilee-name label {
+    font-size: 0.875rem;
+  }
+}
+
+.caption {
+  width: 94%;
+  height: 1.875rem; /* 30px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: transparent;
+  padding: 0 0.625rem; /* Adds slight padding for better spacing */
+}
+
+/* Caption Text */
+.caption label {
+  color: black;
+  font-weight: 700;
+  font-size: 0.96875rem; /* 15.5px */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  max-width: 100%;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .caption {
+    height: auto; /* Allows for multiple lines if necessary */
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .caption label {
+    font-size: 0.9375rem; /* Slightly smaller for mobile */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .caption {
+    height: auto;
+    padding: 0.3125rem; /* Adjusted for compact screens */
+  }
+
+  .caption label {
+    font-size: 0.875rem; /* Smaller font size */
+  }
+}
+.videoo {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 0.0625rem; /* 1px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.videoo video {
+  width: 100%;
+  height: 12.5rem; /* 200px */
+  object-fit: cover;
+  border-radius: 0.4375em; /* Converted from 7px */
+  display: block;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .videoo video {
+    height: 10rem; /* Adjusted for tablets */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .videoo video {
+    height: 8.5rem; /* Adjusted for mobile */
+  }
+}
+.overlay-textt {
+  position: absolute;
+  min-width: 12%; /* Slightly increased for better visibility */
+  max-width: 25%;
+  height: auto; /* Allows dynamic height */
+  background-color: rgba(0, 0, 0, 0.65); /* Slightly darker for better contrast */
+  color: white;
+  left: 2%;
+  bottom: 4.5%; /* Adjusted for better alignment */
+  border-radius: 0.4375rem; /* 7px */
+  padding: 0.4rem 0.6rem; /* Slightly increased padding for better spacing */
+  font-size: clamp(0.75rem, 1.2vw, 1rem); /* Responsive font size */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-break: break-word;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect for Better Interaction */
+.overlay-textt:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+  transform: scale(1.05); /* Slightly enlarges */
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 768px) {
+  .overlay-textt {
+    max-width: 35%;
+    font-size: clamp(0.7rem, 2vw, 0.875rem);
+    bottom: 3.5%;
+    left: 3%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .overlay-textt {
+    max-width: 45%;
+    font-size: 0.75rem;
+    padding: 0.3rem 0.5rem;
+    bottom: 3%;
+    left: 3%;
+  }
+}
+
+
+.sectiionn {
+  display: flex;
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  margin-top: 1px;
+  border-radius: 0rem; /* 7px */
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  gap: 0.3125rem; /* 5px */
+}
+
+/* Common Styling for All Sections */
+.views, .time, .category {
+  height: 1.875rem; /* 30px */
+  background-color: transparent;
+  margin: 0.3125rem 0;
+  border-radius: 0rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Views Section */
+.views {
+  max-width: 25%;
+  min-width: 22%;
+  display: flex;
+  align-items: center;
+  gap: 0.1875rem; /* 3px */
+}
+
+.views img {
+  width: 1.8vw;
+  height: 1.8vw;
+  margin-left: 1rem;
+}
+
+.views label {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
+  max-width: 100%;
+  color: black;
+  font-size: clamp(0.75rem, 1vw, 0.875rem); /* Responsive */
+}
+
+/* Time Section */
+.time {
+  flex-grow: 1;
+  max-width: 30%;
+  min-width: 27%;
+  margin: 0.3125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.time label {
+  margin: 0;
+  font-size: clamp(0.875rem, 1vw, 1rem); /* Responsive font size */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  color: black;
+}
+
+/* Category Section */
+.category {
+  display: none; /* Default hidden */
+  width: 30%;
+  margin: 0.3125rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.4375rem;
+  flex: 2;
+  max-width: 11.25rem; /* 180px */
+}
+
+/* Show Category Section on Larger Screens */
+@media screen and (min-width: 1024px) {
+  .category {
+    display: none; /* Default hidden */
+  }
+}
+
+.category label {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
+  max-width: 100%;
+  color: black;
+  font-size: 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .sectiionn {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .views,
+  .time,
+  .category {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .views {
+    justify-content: flex-start;
+  }
+
+  .views img {
+    max-width: 20px;
+  }
+}
+
+
+
+
+/* Small phones */
+@media (max-width: 375px) {}
+
+/* Large phones */
+@media (max-width: 600px) {}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 991px)
+ {
+
+  .container
+  {
+    background-color: transparent;
+
+  }
+
+  .Table
+  {
+    background-color: transparent;
+height: 58px;
+  }
+
+  .overlay-text
+  {
+    background-color: transparent;
+font-size: 18px;
+margin-top: 7px;
+  }
+
+  .nav
+  {
+    background-color: transparent;
+float: left;
+margin-left: 205px;
+
+  }
+
+  .container-1
+  {
+    background-color: transparent;
+  
+   }
+
+ }
+
+/* Laptops */
+@media (min-width: 992px) and (max-width: 1440px) 
+{
+.container-1
+{
+  background-color: transparent;
+  
+
+}
+
+
+}
+
+/* Desktops */
+@media (min-width: 1441px) and (max-width: 1920px)
+ {
+.body
+{
+  background-color: transparent;
+
+
+}
+
+.Table
+{
+  background-color: white;
+
+}
+
+.overlay-text
+{
+  background-color: white;
+width: 80%;
+height: 57px;
+margin-top: 0px;
+
+
+}
+
+
+.nav
+{
+  width: 100%;
+  background-color: white;
+gap:40px;
+}
+
+.Account
+{
+margin-right: 200px;
+
+}
+
+.kontainer
+{
+width: 24%;
+}
+ 
+.videoo video
+{
+height: 280px;
+
+
+}
+
+.sectiionn
+{
+margin-top: 300px;
+
+}
+
+
+
+
+
+
+
+
+ }
+
+/* Smart TVs and 4K Screens */
+@media (min-width: 1921px) {}
+
+
+/* Light Mode Styles */
+.light-mode {
+  background-color: white; /* White background for Light Mode */
+  color: black; /* Black text for Light Mode */
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #121212; /* Black background for Dark Mode */
+  color: white; /* White text for Dark Mode */
+}
+
+/*
+.dark-mode .nav .fx-gap  {
+  background-color:#FFFAFA;
+}
+*/
+
+.dark-mode .nav input[type="text"]  {
+  color:   #F5F5DC; 
+}
+
+.dark-mode .nav input[type="text"]::placeholder  {
+  color:   #F5F5DC; 
+}
+
+.dark-mode .nav .fx-gap img
+{
+  filter: invert(1);
+
+}
+
+
+.dark-mode .container .nav{
+  background-color: #121212; 
+   }
+
+   .dark-mode .container .Table{
+    background-color: #121212; 
+     }
+
+     .dark-mode .container .Table .overlay-text{
+      background-color: #121212; 
+       }
+
+
+
+.dark-mode .container .search img,
+.dark-mode .container .upload img,
+.dark-mode .container .Notifications img,
+.dark-mode .container .Settings img
+
+{
+  filter: invert(1);
+
+}
+
+.dark-mode .profilee-name label{
+  color: #D3D3D3;
+  }
+
+  .dark-mode .caption label{
+    color:white; 
+    }
+  
+
+    .dark-mode .sectiionn .views label,
+    .dark-mode .sectiionn .category label
+    
+    
+    {
+      color:#FFFAFA;
+    
+    }
+    
+    .dark-mode .sectiionn .views img
+    {
+      filter: invert(1);
+    
+    }
+
+
+.dark-mode .hero h2{
+  color:white; /* Change to white in dark mode */
+}
+
+
+
+.dark-mode .profail-name h4 {
+  color: white; /* Change to white in dark mode */
+}
+
+.dark-mode .Name {
+ background-color: transparent;
+}
+
+.dark-mode .Name label {
+  color: #D3D3D3;
+ }
+ 
+ .dark-mode .container-2 {
+  background-color: transparent;
+ }
+ 
+ .dark-mode .container-2 h3 {
+  color:   #F5F5DC; 
+  }
+  
+  .dark-mode .container-3 .viewws,
+  .dark-mode .container-3 .followers,
+  .dark-mode .container-3 .videos,
+  .dark-mode .container-3 .country,
+  .dark-mode .container-3 .follow
+  
+  {
+    background-color: transparent;
+  
+  }
+  
+
+  .dark-mode .container-3 .viewws img,
+  .dark-mode .container-3 .followers img,
+  .dark-mode .container-3 .videos img,
+  .dark-mode .container-3 .country img,
+  .dark-mode .container-3 .follow img
+  
+  {
+    filter: invert(1);
+  
+  }
+  
+  .dark-mode .container-3 .viewws label,
+  .dark-mode .container-3 .followers label,
+  .dark-mode .container-3 .videos label,
+  .dark-mode .container-3 .country label,
+  .dark-mode .container-3 .follow label
+  {
+    color:#FFFFFF;
+  
+  }
+  
+
+.dark-mode .container-4 .my-videos,
+.dark-mode .container-4 .watchlist,
+.dark-mode .container-4 .favorites,
+.dark-mode .container-4 .playlist,
+.dark-mode .container-4 .community
+
+{
+  background-color: transparent;
+
+}
+
+
+
+.dark-mode .container-4 .my-videos img,
+.dark-mode .container-4 .watchlist img,
+.dark-mode .container-4 .favorites img,
+.dark-mode .container-4 .playlist img,
+.dark-mode .container-4 .community img
+
+{
+  filter: invert(1);
+
+}
+
+.dark-mode .container-4 .my-videos label,
+.dark-mode .container-4 .watchlist label,
+.dark-mode .container-4 .favorites label,
+.dark-mode .container-4 .playlist label,
+.dark-mode .container-4 .community label
+{
+  color:#FFFFFF;
+
+}
+
+/* Dark Mode */
+.dark-mode .square
+{
+  background-color: transparent;
+
+}
+
+.dark-mode .square label
+{
+  color: #D3D3D3;
+
+}
+
+.dark-mode .caaption label
+{
+  color:white; 
+
+}
+
+.dark-mode .about p
+{
+  color:white; 
+
+}
+
+
+.dark-mode .secction .viewss ,
+.dark-mode .secction .commentss ,
+.dark-mode .secction .likee,
+.dark-mode .secction .dislikee,
+.dark-mode .secction .timess,
+.dark-mode .secction .optionn
+{
+  background-color: #353839;
+
+}
+
+
+.dark-mode .secction .viewss img,
+.dark-mode .secction .commentss img,
+.dark-mode .secction .likee img,
+.dark-mode .secction .dislikee img,
+.dark-mode .secction .optionn img
+{
+  filter: invert(1);
+
+}
+
+.dark-mode .secction .viewss label,
+.dark-mode .secction .commentss label,
+.dark-mode .secction .likee label,
+.dark-mode .secction .dislikee label,
+.dark-mode .secction .timess label,
+.dark-mode .secction .optionn label
+{
+  color:   white; 
+
+}
+
+.net-text {
+  color: red; /* Black color for NET in light mode */
+  font-size: 2em; /* Adjust size as needed */
+}
+
+.toon-text {
+  color: red; /* Red color for TOON in light mode */
+  font-size: 2em; /* Adjust size as needed */
+}
+
+
+
+.dark-mode .net-text {
+  color: red; /* White color for NET in dark mode */
+}
+
+.dark-mode .toon-text {
+  color: red;  /* Yellow color for TOON in dark mode */
+}
+
+
+.dark-mode .captionn h3 {
+  color:#A4F4AE; 
+  }
+
+  .dark-mode .profail-name h3{
+    color: #D3D3D3;
+    }
+
+    .dark-mode .caption h4{
+      color:white; 
+      }
+    
+      .dark-mode .captionn h3 {
+        color:white; 
+        }
+      
+
+  .dark-mode .captiion label {
+    color:white; 
+  }
+
+
+  .dark-mode .container .search img,
+  .dark-mode .container .upload img,
+  .dark-mode .container .Notifications img,
+  .dark-mode .container .Settings img
+  
+  {
+    filter: invert(1);
+  
+  }
