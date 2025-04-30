@@ -648,28 +648,26 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
 
 .video-container {
   position: relative; /* Make sure it's positioned */
-  width: 99%;
-  height: 560px;
+  width: 98%;
+  height: 550px;
   background-color: transparent;
-  border-style: ridge;
   margin-left: 0.5%;
   border-radius: 7px;
   margin-top: 60px;
-  border: 1px solid #ccc; /* Set a very thin border */
+  border-style:none;
+  padding: 5px;
 }
-
 .containerr {
-  position: absolute;
+  position:absolute;
   width: clamp(300px, 58%, 100%);
   max-width: 100%;
-  height: 540px; /* Set fixed height to 500px */
+  height: 530px; /* Set fixed height to 500px */
   border: none;
   background-color: transparent;
   border-radius: 7px;
   margin-top: 10px;
-  margin-left: 1%;
-  border-style: ridge;
-  border: 1px solid #ccc; /* Set a very thin border */
+  margin-left: 0%;
+  border-style:none;
 }
 
 .profillee {
@@ -678,7 +676,7 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
   height: 2.5rem; /* Flexible height */
   max-width: 100%;
   border-radius: 0px;
-  background-color: transparent;  /* Kept original background */
+  background-color: transparent;/* Kept original background */
   align-items: center;
 margin-top: 0px;
   gap: 0.5rem; /* Adds spacing between elements */
@@ -689,8 +687,7 @@ margin-top: 0px;
   border-radius: 50%;
   float: left; /* Keeping float for now */
   margin-left: clamp(3rem, 2vw, 2rem);
-  padding: 2px;
-  margin-top: 1px;
+  margin-top: 0px;
   background-color: transparent;
   object-fit: cover;
 }
@@ -733,8 +730,8 @@ margin-top: 0px;
   width: 98.6%;
   max-width: 100%;
   height: auto; /* Allow dynamic height */
-  background-color: transparent; 
-  margin-top: 45px;
+  background-color: transparent;
+  margin-top: 0px;
   margin-bottom: 0;
   display: flex;
   align-items: center; /* Center items vertically */
@@ -779,22 +776,20 @@ margin-top: 0px;
   display: block; /* Removes any unwanted whitespace below */
 }/* Section container for child elements */
 
+
 .sectionn {
-  position: relative;
-  width: 72vw; /* Uses viewport width for responsiveness */
-  max-width: 99.5%;
-  height: auto; /* Adapts to content */
-  background-color: transparent;
-  border-style: none;
+  width: 100%;
+  max-width:99.5%;
   display: flex;
-  flex-wrap: nowrap; /* Prevents wrapping */
-  justify-content: center; /* Aligns items centrally */
-  align-items: center; /* Ensures vertical alignment */
-  gap: 0.875em; /* Adds proper spacing */
-  margin-top:5px;
-  padding: 0.2rem;
+  flex-wrap:nowrap; /* More flexible layout */
+  justify-content: center;
+  align-items: center;
+  gap: 0.875em;
+  margin-top: 5px;
   border-radius: 0.4375rem;
+  border-style:none;
 }
+
 
 /* Consistent styling for child elements */
 .viewss,
@@ -816,6 +811,12 @@ margin-top: 0px;
 
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
 /* Increase space for time and follow buttons */
 .follow {
   flex: 2;
@@ -824,7 +825,6 @@ margin-top: 0px;
 .timee {
   flex: 2;
 }
-
 /* Responsive icons */
 .viewss img,
 .commentss img,
@@ -853,10 +853,6 @@ margin-top: 0px;
 }
 
 
-
-
-
-
 .container-2 {
   position: relative;
   flex-basis: 38%; /* Allows dynamic width */
@@ -878,10 +874,10 @@ float: right;
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
   margin-bottom: 20px;
-  border-style:ridge;
-  border: 1px solid #ccc; /* Set a very thin border */
   justify-content: flex-start;
+border-style:none;
 }
+
 
 /* Dark mode adjustments */
 .dark-mode .container-2 {
@@ -979,8 +975,6 @@ float: right;
   margin-top: 0px;
   margin-bottom: 15px;
   z-index: -1;
-  border-style: ridge;
-  border: 1px solid #ccc; /* Set a very thin border */
 }
 
 /* Subtle hover effect without changing position */
@@ -1613,8 +1607,6 @@ font-size: 14px;
   overflow: hidden;
   padding: 1rem 0;
   gap: 0.3rem;
-  border-style: ridge;
-  border: 1px solid #ccc; /* Set a very thin border */
   justify-content: flex-start;
   clear: both; /* 💥 This line makes it ignore container-2's float */
 }
@@ -1631,8 +1623,6 @@ font-size: 14px;
   cursor: pointer;
   margin-left: 1%; 
   margin-top: 0px;
-  border-style: ridge;
-  border: 1px solid #ccc; /* Set a very thin border */
 }
 /* Video Thumbnails */
 .kontainer img {

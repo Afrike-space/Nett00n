@@ -845,8 +845,7 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
   margin: 0;
   gap: 3.2rem; /* Controls both horizontal and vertical spacing */
   padding: 0.5rem 0;
-  border-style: ridge;
-  border: 1px solid #ccc; /* Set a very thin border */
+
 }
 
 /* Individual Video Containers */
@@ -858,8 +857,6 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
   border-radius: 0.5rem;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   cursor: pointer;
-  border-style: ridge;
-  border: 1px solid #ccc; /* Set a very thin border */
 margin-left: 10px;
 }
 

@@ -691,36 +691,35 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
 
 .video-container {
   position: relative; /* Make sure it's positioned */
-  width: 99%;
-  height: 560px;
-  background-color:none;
-  border-style: ridge;
+  width: 98%;
+  height: 550px;
+  background-color: transparent;
   margin-left: 0.5%;
   border-radius: 7px;
   margin-top: 60px;
-  border-style: ridge;
-  border: 1px solid #ccc; /* Set a very thin border */
+  border-style:none;
+  padding: 5px;
 }
 .containerr {
-  position: absolute;
+  position:absolute;
   width: clamp(300px, 58%, 100%);
   max-width: 100%;
-  height: 535px; /* Set fixed height to 500px */
+  height: 530px; /* Set fixed height to 500px */
   border: none;
   background-color: transparent;
   border-radius: 7px;
   margin-top: 10px;
-  margin-left: 1%;
-  border-style: ridge;
-  border: 1px solid #ccc; /* Set a very thin border */
+  margin-left: 0%;
+  border-style:none;
 }
+
 .profillee {
   position: relative; /* Keeping absolute positioning */
   width: 100%;
   height: 2.5rem; /* Flexible height */
   max-width: 100%;
   border-radius: 0px;
-  background-color: transparent;  /* Kept original background */
+  background-color: transparent;/* Kept original background */
   align-items: center;
 margin-top: 0px;
   gap: 0.5rem; /* Adds spacing between elements */
@@ -731,11 +730,11 @@ margin-top: 0px;
   border-radius: 50%;
   float: left; /* Keeping float for now */
   margin-left: clamp(3rem, 2vw, 2rem);
-  padding: 2px;
-  margin-top: 1px;
+  margin-top: 0px;
   background-color: transparent;
   object-fit: cover;
 }
+
 .profillee-name {
   position: absolute;
   flex-grow: 1; /* Allow dynamic expansion */
@@ -774,8 +773,8 @@ margin-top: 0px;
   width: 98.6%;
   max-width: 100%;
   height: auto; /* Allow dynamic height */
-  background-color: transparent; 
-  margin-top: 45px;
+  background-color: transparent;
+  margin-top: 0px;
   margin-bottom: 0;
   display: flex;
   align-items: center; /* Center items vertically */
@@ -807,7 +806,6 @@ margin-top: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Prevents unwanted scrollbars */
   margin-top: 0px;
 }
 
@@ -819,24 +817,22 @@ margin-top: 0px;
   border-radius: 0.4375rem;
   object-fit: cover;
   display: block; /* Removes any unwanted whitespace below */
-}
+}/* Section container for child elements */
+
 
 .sectionn {
-  position: absolute;
-  width: 72vw; /* Uses viewport width for responsiveness */
-  max-width: 99.5%;
-  height: auto; /* Adapts to content */
-  background-color: transparent;
-  border-style: none;
+  width: 100%;
+  max-width:99.5%;
   display: flex;
-  flex-wrap: nowrap; /* Prevents wrapping */
-  justify-content: center; /* Aligns items centrally */
-  align-items: center; /* Ensures vertical alignment */
-  gap: 0.875em; /* Adds proper spacing */
-  margin-top:5px;
-  padding: 0.2rem;
+  flex-wrap:nowrap; /* More flexible layout */
+  justify-content: center;
+  align-items: center;
+  gap: 0.875em;
+  margin-top: 5px;
   border-radius: 0.4375rem;
+  border-style:none;
 }
+
 
 /* Consistent styling for child elements */
 .viewss,
@@ -855,8 +851,14 @@ margin-top: 0px;
   display: flex;
   align-items: center; /* Centers content */
   justify-content: center;
-  padding: 0.125rem 0.5rem; /* Adds some spacing */
+
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 
 /* Increase space for time and follow buttons */
 .follow {
@@ -866,7 +868,6 @@ margin-top: 0px;
 .timee {
   flex: 2;
 }
-
 /* Responsive icons */
 .viewss img,
 .commentss img,
@@ -894,7 +895,6 @@ margin-top: 0px;
   margin: 0;
 }
 
-
 .container-2 {
   position: relative;
   flex-basis: 38%; /* Allows dynamic width */
@@ -911,13 +911,12 @@ margin-right: 0.5%;
   display: flex;
   flex-wrap: wrap; /* Allow child elements to wrap */
   flex-direction: row; /* Arrange items in rows */
-  max-height: 535px; /* Set max height for scrolling */
+  max-height: 530px; /* Set max height for scrolling */
   /* Custom scrollbar styling */
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
-  border-style:ridge;
-  border: 1px solid #ccc; /* Set a very thin border */
   justify-content: flex-start;
+  border-style:none;
 }
 
 /* Dark mode adjustments */
@@ -966,8 +965,6 @@ margin-right: 0.5%;
   cursor: pointer; /* Indicates interactivity */
   transition: box-shadow 0.3s ease; /* Smooth shadow effect */
   z-index: -1;
-  border-style: ridge;
-  border: 1px solid #ccc; /* Set a very thin border */
 }
 
 /* Subtle hover effect without changing position */
@@ -1568,8 +1565,7 @@ font-size: 14px;
   min-height: 19rem;
   margin-top: 1rem; /* This should be toggled dynamically */
   transition: transform 0.3s ease-in-out; /* Better than margin-top */
-  border-style: ridge;
-  border: 1px solid #ccc; /* Set a very thin border */
+
 }
 
 .comment-container {
@@ -1615,8 +1611,7 @@ border-style:none;
   flex-direction: column; /* Stack child elements */
   align-items: center; /* Center elements horizontally */
   justify-content: center; /* Center content inside */
-  border-style: ridge;
-  border: 1px solid #ccc; /* Set a very thin border */
+
 }
 
 .channel img {
@@ -1627,8 +1622,6 @@ border-style:none;
   object-fit: cover; /* Ensures image fills container neatly */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
-
-
 
 .profile {
   position: relative;
@@ -1667,30 +1660,6 @@ border-style:none;
   text-align: center;
   margin: 0;
   color: #333; /* Darker text for better contrast */
-}
-
-/* Hover effect for better UI feedback */
-.profile-name:hover {
-  background-color: #E0E0E0;
-}
-
-/* Remove underline from links */
-.profile-name a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Mobile Optimization */
-@media (max-width: 768px) {
-  .profile {
-    flex-direction: column; /* Stack items vertically on smaller screens */
-    align-items: center; /* Center items */
-  }
-
-  .profile-name {
-    width: 100%; /* Full width for better layout */
-    justify-content: center;
-  }
 }
 
 
@@ -1762,50 +1731,6 @@ html {
   border-style:none;
 }
 
-/* WebKit-based browsers (Chrome, Safari) */
-.Tablee::-webkit-scrollbar {
-  height: 0.5rem;
-  background: transparent; /* Keeps scrollbar background invisible */
-}
-
-.Tablee::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 0.25rem;
-  transition: background-color 0.3s ease-in-out;
-}
-
-/* Subtle hover effect for scrollbar */
-.Tablee::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-/* Firefox scrollbar styling */
-.Tablee {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.5) white;
-}
-
-/* Dark Mode Styling */
-.dark-mode .Tablee {
-  scrollbar-color: rgba(255, 255, 255, 0.6) grey;
-}
-
-.dark-mode .Tablee::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
-.dark-mode .Tablee::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-/* Mobile Optimization */
-@media (max-width: 768px) {
-  .Tablee {
-    flex-wrap: nowrap; /* Prevents wrapping */
-    justify-content: flex-start; /* Aligns items to the left */
-    padding-left: 0.5rem; /* Adds padding for better mobile view */
-  }
-}
 
 .series {
   position: relative;
@@ -1820,8 +1745,7 @@ html {
   max-height: 13.75rem; /* 220px */
   cursor: pointer;
   overflow: hidden; /* Ensures no content overflows */
-    border-style: ridge;
-    border: 1px solid #ccc; /* Set a very thin border */
+  
 }
 
 .series img {
@@ -1833,20 +1757,9 @@ html {
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-
-
 .series img:hover {
   transform: scale(1.03); /* Smooth zoom effect */
   opacity: 0.95; /* Slight transparency for modern feel */
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .series {
-    min-width: 100%; /* Full width on smaller screens */
-    max-width: 100%;
-    margin-left: 0; /* Reset margin for better spacing */
-  }
 }
 
 .overlay-textttt {
@@ -1856,7 +1769,7 @@ html {
   height: auto; /* Dynamic height */
   background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
   color: white;
-  left: 42%;
+  left: 41%;
   bottom: 15%;
   border-radius: 0.4375rem; /* 7px */
   padding: 0.375rem 0.625rem; /* Increased padding for better readability */
@@ -1900,8 +1813,8 @@ html {
   overflow: hidden;
   padding: 1rem 0; /* Adds some top and bottom spacing */
   gap: 0.3rem; /* Creates spacing between videos */
-  border-style: ridge;
-  border: 1px solid #ccc; /* Set a very thin border */
+  border-style:none;
+
 }
 
 /* Individual Video Containers */
@@ -1913,9 +1826,8 @@ html {
   border-radius: 0.5rem;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   cursor: pointer;
-  border-style: ridge;
+  border-style:none;
 margin-left: 10px;
-border: 1px solid #ccc; /* Set a very thin border */
 }
 
 /* Video Thumbnails */

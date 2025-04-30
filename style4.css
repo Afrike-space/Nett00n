@@ -593,7 +593,6 @@ opacity: 1;
   margin-left: 0%;
   margin-top: 1rem;
   border-radius: 0.5rem;
-  border: 1px solid #ccc;
   padding: 0rem; /* optional spacing inside */
 }
 
@@ -614,6 +613,11 @@ opacity: 1;
   font-size: clamp(1.5rem, 1vw, 3rem);
   text-align: center;
   text-transform: uppercase;
+}
+
+.dark-mode .Title label
+{
+  color: white;
 }
 
 .Profile-description {
@@ -649,8 +653,6 @@ opacity: 1;
   justify-content: space-evenly; /* Evenly distributes children */
   gap: 3vw; /* Dynamic gap */
   border-radius: 0.5rem;
-  border-style: ridge;
-  border: 1px solid #ccc; /* Set a very thin border */
   margin-top: 20px;
 }
 
@@ -718,8 +720,6 @@ opacity: 1;
   background-color: transparent;
   border-radius: 0.4375rem; /* 7px */
   overflow: hidden; /* Ensures content stays within bounds */
-  border-style: ridge;
-  border: 1px solid #ccc; /* Set a very thin border */
   margin-top: 20px;
 }
 
@@ -732,8 +732,6 @@ opacity: 1;
   border-radius: 0.4375rem; /* 7px */
   background-color: transparent;
   overflow: hidden;
-  border-style: ridge;
-  border: 1px solid #ccc; /* Set a very thin border */
 }
 
 .containerr::before {
@@ -914,8 +912,6 @@ margin-top: 20px;
   gap: 3vw; /* Dynamic gap */
   border-radius: 0.5rem;
   margin-top: 30px;
-  border-style: ridge;
-  border: 1px solid #ccc; /* Set a very thin border */
 }
 
 /* Shared styles for navigation items */
@@ -989,8 +985,6 @@ margin-top: 20px;
   overflow: hidden;
   padding: 1rem 0;
   gap: 2rem;
-  border-style: ridge;
-  border: 1px solid #ccc; /* Set a very thin border */
   justify-content: flex-start;
   clear: both; /* 💥 This line makes it ignore container-2's float */
 }
@@ -1007,8 +1001,6 @@ margin-top: 20px;
   cursor: pointer;
   margin-left: 2%; 
   margin-top: 0px;
-  border-style: ridge;
-  border: 1px solid #ccc; /* Set a very thin border */
 }
 /* Video Thumbnails */
 .kontainer img {

@@ -848,7 +848,6 @@ background-color: #121212;
 .dark-mode .container .search img,
 .dark-mode .container .upload img,
 .dark-mode .container .Notifications img,
-.dark-mode .container .Account img,
 .dark-mode .container .Settings img
 {
 filter: invert(1);
