@@ -1,13 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-
-
-
-
-
-
-
-    
-
     const lightIcon = document.getElementById("theme-toggle-light");
     const darkIcon = document.getElementById("theme-toggle-dark");
 
@@ -85,117 +76,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   
-
-  document.addEventListener("DOMContentLoaded", function() {
-    const commentBtn = document.querySelector(".comment-btn");
-    const commentContainer = document.querySelector(".comment-container");
-    const closeBtn = document.querySelector(".close-btn");
-
-    commentBtn.addEventListener("click", function() {
-        commentContainer.classList.add("show-comments");
-    });
-
-    closeBtn.addEventListener("click", function() {
-        commentContainer.classList.remove("show-comments");
-    });
-});
-
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const videos = document.querySelectorAll(".short-video");
-
-    videos.forEach((video) => {
-        video.addEventListener("click", () => {
-            if (video.paused) {
-                video.play();
-            } else {
-                video.pause();
-            }
-        });
-    });
-
-    const likeButtons = document.querySelectorAll(".like-btn");
-    const dislikeButtons = document.querySelectorAll(".dislike-btn");
-
-    likeButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            button.classList.toggle("liked");
-        });
-    });
-
-    dislikeButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            button.classList.toggle("disliked");
-        });
-    });
-});
-document.addEventListener("DOMContentLoaded", function () {
-    const videos = document.querySelectorAll(".short-video");
-    const shortsContainer = document.querySelector(".shorts-container");
-    const upBtn = document.getElementById("upBtn");
-    const downBtn = document.getElementById("downBtn");
-
-    let currentIndex = 0; // Tracks the currently viewed short
-
-    // Play/Pause video on click
-    videos.forEach((video) => {
-        video.addEventListener("click", () => {
-            if (video.paused) {
-                video.play();
-            } else {
-                video.pause();
-            }
-        });
-    });
-
-    // Like/Dislike buttons
-    document.querySelectorAll(".like-btn").forEach((btn) => {
-        btn.addEventListener("click", () => btn.classList.toggle("liked"));
-    });
-
-    document.querySelectorAll(".dislike-btn").forEach((btn) => {
-        btn.addEventListener("click", () => btn.classList.toggle("disliked"));
-    });
-
-    // Function to scroll to a specific short
-    function scrollToShort(index) {
-        if (index >= 0 && index < videos.length) {
-            videos[index].scrollIntoView({ behavior: "smooth", block: "center" });
-            currentIndex = index;
-        }
+  const commentIcon = document.getElementById('comment-icon');
+  const commentContainer = document.querySelector('.comment-container');
+  const shortVideo = document.querySelector('.short-video');
+  const metadata = document.querySelector('.metadata');
+  
+  commentIcon.addEventListener('click', () => {
+    commentContainer.classList.toggle('show');
+  
+    if (commentContainer.classList.contains('show')) {
+      shortVideo.classList.add('shift-left');
+      metadata.classList.add('shift-left');
+    } else {
+      shortVideo.classList.remove('shift-left');
+      metadata.classList.remove('shift-left');
     }
-
-    // Scroll up
-    upBtn.addEventListener("click", () => {
-        scrollToShort(currentIndex - 1);
-    });
-
-    // Scroll down
-    downBtn.addEventListener("click", () => {
-        scrollToShort(currentIndex + 1);
-    });
-
-});
-
-
-document.querySelectorAll('.comment-btn').forEach(button => {
-    button.addEventListener('click', function () {
-        let short = this.closest('.short');
-        let commentContainer = short.querySelector('.comment-container');
-
-        if (commentContainer.style.right === "0px") {
-            commentContainer.style.right = "-300px";
-            short.style.transform = "translateX(0)"; // Move video back
-        } else {
-            commentContainer.style.right = "0px";
-            short.style.transform = "translateX(-50px)"; // Move video left
-        }
-    });
-});
-
-
-
+  });
+  

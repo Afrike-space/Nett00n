@@ -37,44 +37,42 @@ body {
   justify-content: space-between;
 }
 
-
 .Table {
   position: relative;
   min-width: 14%;  /* Slightly increased for better proportions */
-  max-width: 18%;
+  max-width: 15.5%;
   height: 3rem;  /* Adjusted for better spacing */
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color:transparent;
+  background-color: transparent;
 }
 
 .overlay-text {
   position: absolute;
   top: 0;
   left: 0;
-  width: 98%;
+  width: 100%;
   height: 100%;
-  font-size: 1.2rem; /* Increased size for better readability */
+  font-size: 1.25rem; /* Increased size for better readability */
   font-weight: 800; /* Slightly bolder */
   display: flex;
   align-items: center;
   justify-content: center;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   z-index: 3;
-  background-color:transparent;
-  margin-left: 10px;
+  background-color: transparent;
+  margin-left: 0px;
 }
 
 /* NET and TOON Styling */
 .net-text {
-  background: black;
+  background:red;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 1.2em;
+  font-size: 1.3em;
   letter-spacing: 2px;
 }
 
@@ -82,32 +80,19 @@ body {
   background: black;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 1.2em;
+  font-size: 1.3em;
   margin-left: 5px;
-}
-
-/* Shorts Styling */
-.shorts-text {
-  color:white;
-  font-size: 0.8em;
-  font-weight: bold;
-  background:red;
-  padding: 2px 6px;
-  border-radius: 5px;
-  margin-left: 8px;
-
-  text-transform: uppercase;
 }
 
 /* Dark Mode */
 .dark-mode .net-text {
-  background:white;
+  background:red;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .dark-mode .toon-text {
-  background:white;
+  background:yellow;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -123,20 +108,21 @@ a, .net-text, .toon-text {
   text-decoration: none;
 }
 
-
 .nav {
   position: absolute;
-  width: 84.5%;
+  width: 87%;
   float: left;
-  margin-left: 17.7vw; /* Keeps navigation aligned on all screen sizes */
-  height: 100%; /* Ensure it fully extends to parent */
-  background-color:transparent;
+  margin-left: 13.1vw; /* Keeps navigation aligned on all screen sizes */
+  height: auto;
+  background-color:transparent; 
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
   align-items: center; /* Center items vertically */
   justify-content: space-around; /* Ensure equal spacing */
   gap: 5vw; /* Adjusts dynamically */
+  max-height: 5.8567vh; /* Scales well across different devices */
+  margin-bottom: 1vh;
 }
 
 /* Main search container */
@@ -144,16 +130,17 @@ a, .net-text, .toon-text {
   display: flex;
   position: relative;
   width: 90%;
-  max-width: 600px;
+  max-width: 850px; /* was 600px */
   height: auto;
-  background-color:transparent;
-  border-radius: 7px; /* Makes it more stylish */
+  background-color:transparent; 
+  margin: 2vh auto;
+  border-radius: 7px;
   align-items: center;
   border: 0.3px solid #ccc;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for elegance */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
-  margin-top: 0px;
-margin-left: 50px;
+  margin-top: 15px;
+  margin-left: 40px;
 }
 
 /* Search input field */
@@ -162,14 +149,13 @@ margin-left: 50px;
   height: 4.5vh;
   min-height: 30px;
   max-height: 30px;
-  border-radius: 7px; /* Makes it more stylish */
-  background-color:transparent;
+  border-radius: 7px;
+  background-color: transparent;
   border: none;
-  padding: 0.7rem 3rem 0.7rem 2.5rem; /* Adjust spacing */
+  padding: 0.7rem 3rem 0.7rem 2.5rem;
   color: #333;
   font-size: 1rem;
   outline: none;
-  margin-left: 50px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -370,7 +356,7 @@ body.dark-mode .search input[type="search"]::placeholder {
   background-color: #333; /* Dark mode background */
   color: white;
   top: 100%; /* Positioned below the icon */
-  right: 5%;
+  right: 1%;
   border-radius: 0.5em;
   box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.2);
   overflow-y: auto; /* Enables scrolling for multiple notifications */
@@ -435,7 +421,7 @@ body.dark-mode .search input[type="search"]::placeholder {
   border-radius: 50%;
   cursor: pointer;
   float: right;
-  margin-right: 2rem;
+  margin-right: 1rem;
 
 }
 
@@ -463,9 +449,9 @@ body.dark-mode .search input[type="search"]::placeholder {
   background-color: #333; /* Example background for dark mode */
   min-width: 11.25em; /* Converted from 180px */
   box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.2);
-  margin-top:34%;  /* Adjusted to percentage for better scaling */
+  margin-top:26%;  /* Adjusted to percentage for better scaling */
   float: left;
-  margin-left: 94%; /* Centering based on container width */
+  margin-left:99%; /* Centering based on container width */
   transform: translateX(-50%); /* Ensures it remains centered */
   border-radius: 0.5em; /* Converted from 7px */
   max-height: 25em; /* Converted from 600px */
@@ -535,9 +521,6 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
   transition: color 0.3s ease-in-out;
 }
 
-
-
-
 .dropdown-content li {
   list-style: none; /* Remove bullet points */
 }
@@ -590,10 +573,7 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
     font-size: 0.6875em; /* Further reduce size for compact screens */
     bottom: -1.75rem; /* Adjust positioning */
   }
-} 
-
-
-
+}
 .suggestionss {
   position: fixed;
   display:none;
@@ -704,9 +684,9 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
 .sidebar {
   display:block;
   position: fixed;
-  width: 15%;
+  width: 14%;
   height: 100vh; /* Full viewport height */
-  background-color:white;
+  background-color:transparent;
   top: 3rem;
   left: 0;
   overflow-x: hidden;
@@ -720,7 +700,7 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
 }
 
 .sidebar:hover {
-  width: 21%; /* Expands slightly on hover for better UX */
+  width: 14%; /* Expands slightly on hover for better UX */
 }
 
 .sidebar::-webkit-scrollbar {
@@ -778,106 +758,183 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
 .home:hover,
 .dark-mode .home:hover {
   background-color: grey;
-}/* Shorts Container - Ensuring Proper Alignment */
-.shorts-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  max-width: 450px;
-  height: 650px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow-y: scroll; /* Enable scrolling */
-  scroll-snap-type: y mandatory;
-  background-color: transparent;
 }
 
-.short {
-  scroll-snap-align: start;
-  flex: 0 0 100%;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
+
+.shorts-container {
+  position: relative;
+  width:86%;
+  height: 100vh;
+  background-color: transparent;
+  margin: 49px 0 0 180px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: flex-start;
+  padding: 0px;
+}
+
+.shorts
+{
+  position: relative;
+  width:93%;
+  height: auto;
+  background-color: transparent;
+display:flex;
+flex-wrap: nowrap;
+margin: 0px 0 0 0px;
+z-index: 0;
+padding: 5px;
+}
+
+
+.short-video {
+  position: relative;
+  width: 40%;
+  aspect-ratio: 9 / 16;
+  max-height: 700px;
+  object-fit: cover;
+  border-radius: 12px;
   overflow: hidden;
+  margin: 49px 0 0 300px;
+  margin-bottom: 5px;
+  transition: margin 0s ease; /* Smooth movement */
 }
 
 .short-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  transition: margin-left 0s ease;
 }
+
+.short-video.shift-left {
+  margin-left: 50px; /* Change this to 100px as per your requirement */
+}
+
+.comment-container {
+  display: none;
+}
+
+.comment-container.show {
+  display: block;
+}
+
+
+
+.metadata {
+  width: 5%;
+  height: 500px; /* Adjust as necessary */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  position: absolute; /* Ensure it stays in the same place */
+  top: 17%; /* Adjust the top position */
+  right: 270px; /* Adjust this value if necessary */
+  z-index: 10000;
+  
+}
+
+.metadata {
+  transition: right 0s ease; /* Add this line */
+}
+
+
+.metadata.shift-left {
+  right: calc(270px + 250px); /* or adjust as needed for same shift as video */
+  transition: right 0s ease;
+}
+
+
+
+.like, .dislike, .comment, .share, .options {
+  width: 100%;
+  height: 60px;
+  background-color: transparent;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;   /* Stack icon and label */
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0;
+}
+
+.like img, .dislike img, .comment img, .share img, .options img {
+  width: 30px;
+  height: 30px;
+}
+
+.like label, .dislike label, .comment label, .share label, .options label{
+  font-size: 0.75rem;
+  color: black;
+  margin-top: 10px;
+}
+
+.dark-mode .like label,
+.dark-mode .dislike label,
+.dark-mode .comment label,
+.dark-mode .share label,
+.dark-mode .options label {
+  color: white;
+}
+
+
+.dark-mode .like img,
+.dark-mode .dislike img,
+.dark-mode .comment img,
+.dark-mode .share img,
+.dark-mode .options img
+ {
+  filter: invert(1);
+}
+
+
+.comment-container {
+  display: none;
+  position: absolute;
+  top: 53px; /* Adjust this to position it correctly */
+  left: 570px; /* Adjust this to position it correctly */
+  width: 40%;
+  height: 700px;
+  background-color: palegreen;
+  border-radius: 12px;
+ z-index: 10;
+}
+
+.comment-container {
+  transition: right 0.4s ease; /* Add this line */
+}
+
+
+.comment-container.show {
+  display: block;
+}
+
 
 /* Controls Styling */
 .controls {
-  position: absolute;
+  position: fixed;
   top: 50%;
   right: 15px;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 15px;
+  gap: 20px;
+  z-index: 999;
 }
-
-.controls button {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  background: rgba(255, 255, 255, 0.1);
+.nav-icon {
+  width: 40px;
+  height: 40px;
   cursor: pointer;
-  border-radius: 50%;
-  transition: background 0.3s, transform 0.2s;
+  filter: drop-shadow(0 0 5px black);
+  transition: transform 0.2s;
 }
 
-.controls button img {
-  width: 25px;
-  height: 25px;
-  filter: invert(1); /* Makes icons visible in dark mode */
+.dark-mode .nav-icon {
+  filter: invert(1);
 }
 
-/* Navigation Buttons */
-.nav-buttons {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.nav-buttons button {
-  background: rgba(255, 255, 255, 0.2);
-  border: none;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 20px;
-  transition: background 0.3s, transform 0.2s;
-}
-
-.nav-buttons button:hover {
-  background: rgba(255, 255, 255, 0.4);
+.nav-icon:hover {
   transform: scale(1.1);
-}
-
-.nav-buttons button:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-/* Light Mode */
-@media (prefers-color-scheme: light) {
-  .nav-buttons button {
-      background-color: rgba(255, 255, 255, 0.8);
-      color: black;
-  }
-
-  .nav-buttons button:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-      color: white;
-  }
 }
 /* Light Mode Styles */
 .light-mode {
