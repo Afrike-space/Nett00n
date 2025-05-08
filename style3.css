@@ -36,11 +36,10 @@ body {
   margin-bottom: 0px;
   justify-content: space-between;
 }
-
 .Table {
   position: relative;
   min-width: 14%;  /* Slightly increased for better proportions */
-  max-width: 18%;
+  max-width: 15.5%;
   height: 3rem;  /* Adjusted for better spacing */
   display: flex;
   align-items: center;
@@ -54,7 +53,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  font-size: 1.2rem; /* Increased size for better readability */
+  font-size: 1.25rem; /* Increased size for better readability */
   font-weight: 800; /* Slightly bolder */
   display: flex;
   align-items: center;
@@ -69,9 +68,9 @@ body {
 
 /* NET and TOON Styling */
 .net-text {
-  background: black;
+  background:red;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: red;
+  -webkit-text-fill-color: transparent;
   font-size: 1.3em;
   letter-spacing: 2px;
 }
@@ -84,30 +83,17 @@ body {
   margin-left: 5px;
 }
 
-/* Shorts Styling */
-.shorts-text {
-  color: white;
-  font-size: 0.8em;
-  font-weight: bold;
-  background:red;
-  padding: 2px 6px;
-  border-radius: 5px;
-  margin-left: 8px;
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
-  text-transform: uppercase;
-}
-
 /* Dark Mode */
 .dark-mode .net-text {
-  background:white;
+  background:red;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: red;
+  -webkit-text-fill-color: transparent;
 }
 
 .dark-mode .toon-text {
-  background:white;
+  background:yellow;
   -webkit-background-clip: text;
-  -webkit-text-fill-color:yellow;
+  -webkit-text-fill-color: transparent;
 }
 
 .dark-mode .shorts-text {
@@ -120,6 +106,7 @@ body {
 a, .net-text, .toon-text {
   text-decoration: none;
 }
+
 .nav {
   position: absolute;
   width: 84.5%;
@@ -142,16 +129,17 @@ a, .net-text, .toon-text {
   display: flex;
   position: relative;
   width: 90%;
-  max-width: 630px;
+  max-width: 850px; /* was 600px */
   height: auto;
-  background-color:transparent;
+  background-color:transparent; 
   margin: 2vh auto;
-  border-radius: 7px; /* Makes it more stylish */
+  border-radius: 7px;
   align-items: center;
   border: 0.3px solid #ccc;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for elegance */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
   margin-top: 15px;
+  margin-left: 40px;
 }
 
 /* Search input field */
@@ -160,10 +148,10 @@ a, .net-text, .toon-text {
   height: 4.5vh;
   min-height: 30px;
   max-height: 30px;
-  border-radius: 7px; /* Makes it more stylish */
-  background-color:transparent;
-  border: none;
-  padding: 0.7rem 3rem 0.7rem 2.5rem; /* Adjust spacing */
+  border-radius: 7px;
+  background-color: transparent;
+  border: 0.1px solid grey; 
+  padding: 0.7rem 3rem 0.7rem 2.5rem;
   color: #333;
   font-size: 1rem;
   outline: none;
@@ -175,7 +163,6 @@ a, .net-text, .toon-text {
   border: 1px solid white;
   box-shadow: 0px 0px 8px none;
 }
-
 
 /* Clear button */
 .clear-btn {
@@ -846,7 +833,7 @@ margin-top: 0px;
   flex: 1.5; /* Distribute available space equally */
   min-width: 1rem; /* Prevents excessive shrinking */
   height: 1.7rem; /* Ensures uniform height */
-  background-color: #F5F5F5;
+  background-color: #F5F5F5; /* Pale Grey */
   border-radius: 7px;
   display: flex;
   align-items: center; /* Centers content */
@@ -881,6 +868,14 @@ img {
   margin-right: 0.5rem;
 }
 
+
+/* Responsive icons */
+.commentss img
+ {
+margin-top:2px ;
+}
+
+
 /* Label styling */
 .viewss label,
 .commentss label,
@@ -889,7 +884,7 @@ img {
 .timee label,
 .follow label {
   background-color: transparent;
-  color: black;
+  color: #333333;
   font-size: clamp(0.955rem, 1vw, 0.955rem);
   text-align: center;
   margin: 0;
@@ -927,7 +922,7 @@ margin-right: 0.5%;
   
   width: 100%;
   height: 40px;
-  background-color: #F5F5F5;
+  background-color: #F5F5F5; /* Pale Grey */
   border-radius: 0.4375rem; /* Smooth rounded edges */
   border: none; /* Remove unnecessary border */
   z-index: 0; /* Ensure it's above other elements */
@@ -942,7 +937,7 @@ margin-right: 0.5%;
 /* Label styling for better text display */
 .optionn label {
   font-weight: bold;
-  color: #333; /* Darker shade for readability */
+  color: #333333;
   text-overflow: ellipsis; /* Handle long text */
   white-space: nowrap; /* Prevent wrapping */
   overflow: hidden; /* Hide overflowing text */
@@ -961,7 +956,7 @@ margin-right: 0.5%;
   height: auto; /* Auto height for dynamic content */
   border: none; /* Remove unnecessary borders */
   border-radius: 0.4375rem; /* Smooth rounded edges */
-  margin: 25px 0 35px 10px; /* Maintain original positioning */
+  margin: 25px 0 35px 12px; /* Maintain original positioning */
   cursor: pointer; /* Indicates interactivity */
   transition: box-shadow 0.3s ease; /* Smooth shadow effect */
   z-index: -1;
@@ -1812,9 +1807,9 @@ html {
   top:23em; /* 113px */
   overflow: hidden;
   padding: 1rem 0; /* Adds some top and bottom spacing */
-  gap: 0.3rem; /* Creates spacing between videos */
+  gap:1.5rem; /* Creates spacing between videos */
   border-style:none;
-
+justify-content: flex-start;
 }
 
 /* Individual Video Containers */
@@ -1827,7 +1822,7 @@ html {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   cursor: pointer;
   border-style:none;
-margin-left: 10px;
+margin-left: 18px;
 }
 
 /* Video Thumbnails */
@@ -2381,7 +2376,7 @@ margin-top: 300px;
 
 /* Dark Mode Styles */
 .dark-mode {
-  background-color: #121212; /* Black background for Dark Mode */
+  background-color: #161616;  /* Black background for Dark Mode */
   color: white; /* White text for Dark Mode */
 }
 
@@ -2458,7 +2453,7 @@ margin-top: 300px;
 }
 
 .dark-mode .sidebar{
-  background-color: #121212; 
+  background-color: #161616; 
   }
 
   .dark-mode .sidebar img
@@ -2521,15 +2516,15 @@ margin-top: 300px;
     background-color: #353839;
     }
     .dark-mode .container .nav{
-      background-color: #121212; 
+      background-color: #161616; 
        }
     
        .dark-mode .container .Table{
-        background-color: #121212; 
+        background-color: #161616; 
          }
     
          .dark-mode .container .Table .overlay-text{
-          background-color: #121212; 
+          background-color: #161616; 
            }
     
     

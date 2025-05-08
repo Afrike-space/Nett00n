@@ -37,10 +37,6 @@ body {
   justify-content: space-between;
 }
 
-
-
-
-
 .Table {
   position: relative;
   min-width: 14%;  /* Slightly increased for better proportions */
@@ -88,19 +84,6 @@ body {
   margin-left: 5px;
 }
 
-/* Shorts Styling */
-.shorts-text {
-  color: white;
-  font-size: 0.8em;
-  font-weight: bold;
-  background:red;
-  padding: 2px 6px;
-  border-radius: 5px;
-  margin-left: 8px;
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
-  text-transform: uppercase;
-}
-
 /* Dark Mode */
 .dark-mode .net-text {
   background:red;
@@ -124,6 +107,8 @@ body {
 a, .net-text, .toon-text {
   text-decoration: none;
 }
+
+
 .nav {
   position: absolute;
   width: 84.5%;
@@ -146,16 +131,17 @@ a, .net-text, .toon-text {
   display: flex;
   position: relative;
   width: 90%;
-  max-width: 630px;
+  max-width: 850px; /* was 600px */
   height: auto;
-  background-color:transparent;
+  background-color:transparent; 
   margin: 2vh auto;
-  border-radius: 7px; /* Makes it more stylish */
+  border-radius: 7px;
   align-items: center;
   border: 0.3px solid #ccc;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for elegance */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
   margin-top: 15px;
+  margin-left: 40px;
 }
 
 /* Search input field */
@@ -164,10 +150,10 @@ a, .net-text, .toon-text {
   height: 4.5vh;
   min-height: 30px;
   max-height: 30px;
-  border-radius: 7px; /* Makes it more stylish */
-  background-color:transparent;
-  border: none;
-  padding: 0.7rem 3rem 0.7rem 2.5rem; /* Adjust spacing */
+  border-radius: 7px;
+  background-color: transparent;
+  border: 0.1px solid grey; 
+  padding: 0.7rem 3rem 0.7rem 2.5rem;
   color: #333;
   font-size: 1rem;
   outline: none;
@@ -179,7 +165,6 @@ a, .net-text, .toon-text {
   border: 1px solid white;
   box-shadow: 0px 0px 8px none;
 }
-
 
 /* Clear button */
 .clear-btn {
@@ -196,22 +181,25 @@ a, .net-text, .toon-text {
 /* Show clear button when text is entered */
 .search input[type="search"]:valid ~ .clear-btn {
   display: block;
+  background-color: transparent;
 }
 
 
 /* Dark mode input */
 body.dark-mode .search input[type="search"] {
-  color: #fff;
+  background-color: transparent;
 }
 
 /* Placeholder styling */
 .search input[type="search"]::placeholder {
   color: #36454F;
   font-size: 0.9rem; /* Ensures readability */
+  background-color: transparent;
 }
 
 body.dark-mode .search input[type="search"]::placeholder {
   color: #D3D3D3;
+  background-color: transparent;
 }
 
 /* Search Icon Styling */
@@ -245,7 +233,7 @@ body.dark-mode .search input[type="search"]::placeholder {
 .search input[type="search"]:-webkit-autofill:hover,
 .search input[type="search"]:-webkit-autofill:focus,
 .search input[type="search"]:-webkit-autofill:active {
-  background-color: white !important;
+  background-color: transparent!important;
   color: #333 !important;
   -webkit-box-shadow: 0 0 0px 1000px white inset !important;
   box-shadow: 0 0 0px 1000px white inset !important;
@@ -675,7 +663,7 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
   width: 100%;
   height: 2.5rem; /* Flexible height */
   max-width: 100%;
-  border-radius: 0px;
+  border-radius: 7px;
   background-color: transparent;/* Kept original background */
   align-items: center;
 margin-top: 0px;
@@ -803,12 +791,12 @@ margin-top: 0px;
   flex: 1.5; /* Distribute available space equally */
   min-width: 1rem; /* Prevents excessive shrinking */
   height: 1.7rem; /* Ensures uniform height */
-  background-color: #F5F5F5;
+  background-color: #F5F5F5; /* Pale Grey */
   border-radius: 7px;
   display: flex;
   align-items: center; /* Centers content */
   justify-content: center;
-
+margin-top: 4px;
 }
 
 img {
@@ -838,6 +826,13 @@ img {
   margin-right: 0.5rem;
 }
 
+/* Responsive icons */
+.commentss img
+ {
+margin-top:2px ;
+}
+
+
 /* Label styling */
 .viewss label,
 .commentss label,
@@ -846,7 +841,7 @@ img {
 .timee label,
 .follow label {
   background-color: transparent;
-  color: black;
+  color: #333333;
   font-size: clamp(0.955rem, 1vw, 0.955rem);
   text-align: center;
   margin: 0;
@@ -906,7 +901,7 @@ border-style:none;
   flex-grow: 2; /* Allows elements to expand */
   min-width:10%; /* Prevents elements from shrinking too much */
   height: 30px;
-  background-color: #F5F5F5;
+  background-color: #F5F5F5; /* Pale Grey */
   margin: 5px; /* Reduce spacing to fit items in one row */
   border-radius: 0.4375rem; /* 7px / 16 = 0.4375rem */
   display: flex;
@@ -969,7 +964,7 @@ border-style:none;
   height: auto; /* Auto height for dynamic content */
   border: none; /* Remove unnecessary borders */
   border-radius: 0.4375rem; /* Smooth rounded edges */
-  margin: 10px 0 5px 5px; /* Maintain original positioning */
+  margin: 10px 0 5px 12px; /* Maintain original positioning */
   cursor: pointer; /* Indicates interactivity */
   transition: box-shadow 0.3s ease; /* Smooth shadow effect */
   margin-top: 0px;
@@ -989,6 +984,9 @@ border-style:none;
   border-radius: 0.4375rem; /* Maintain consistent rounding */
 }
 
+.card {
+  pointer-events: none; /* This would disable all interactions */
+}
 
 
 /* Profile container */
@@ -1515,15 +1513,30 @@ textarea.auto-expand {
 }
 
 .comment-Section button {
-  width: 100%;
+  width: 50%;
   height: 30px;
   border: none;
-  background-color:green;
-  color: white;
+  background-color: #C0C3C5;
+  color: black;
   font-size: 14px;
   font-weight: bold;
   border-radius: 7px;
   cursor: pointer;
+  margin-left: 50px;
+}
+
+.dark-mode .comment-Section {
+
+  background-color: transparent;
+
+
+}
+
+.dark-mode .comment-Section button {
+
+  background-color:gray;
+  color: white;
+
 }
 
 .comment-Section button:hover {
@@ -1606,7 +1619,7 @@ font-size: 14px;
   top: 0.4em;
   overflow: hidden;
   padding: 1rem 0;
-  gap: 0.3rem;
+  gap:1.5rem;
   justify-content: flex-start;
   clear: both; /* 💥 This line makes it ignore container-2's float */
 }
@@ -1621,7 +1634,7 @@ font-size: 14px;
   margin-bottom: 0.5rem; /* 30px */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   cursor: pointer;
-  margin-left: 1%; 
+  margin-left: 28px;
   margin-top: 0px;
 }
 /* Video Thumbnails */
@@ -2032,7 +2045,7 @@ font-size: 14px;
 
 /* Dark Mode Styles */
 .dark-mode {
-  background-color: #121212; /* Black background for Dark Mode */
+  background-color: #161616; /* Black background for Dark Mode */
   color: white; /* White text for Dark Mode */
 }
 
@@ -2078,15 +2091,15 @@ font-size: 14px;
 }
 
 .dark-mode .container .nav{
-  background-color: #121212; 
+  background-color: #161616; 
    }
 
    .dark-mode .container .Table{
-    background-color: #121212; 
+    background-color: #161616; 
      }
 
      .dark-mode .container .Table .overlay-text{
-      background-color: #121212; 
+      background-color: #161616; 
        }
 
 
@@ -2170,7 +2183,7 @@ font-size: 14px;
 }
 
 .dark-mode .optionn {
-  background-color: #121212; 
+  background-color: #161616; 
 }
 
 
@@ -2244,12 +2257,12 @@ font-size: 14px;
 
 
 .dark-mode .sidebar{
-  background-color: #121212; 
+  background-color: #161616; 
   }
 
   .sidebar:hover {
     width: 15%; /* Expands slightly on hover for better UX */
-    background-color: #121212; 
+    background-color: #161616; 
   }
 
   .dark-mode .sidebar img

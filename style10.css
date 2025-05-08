@@ -16,83 +16,72 @@ html {
 
   }
   
-  
-  .container {
-    position: fixed;
-    background-color:white;
-    display: flex;
-    flex: 1;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    object-fit: cover;
-    top: 0px;
-    float: left;
-    width: 100%;
-    height: auto;
-    max-height:54px ;
-    border-radius: 0px;
-    left: 0px;
-    border-style: none;
-    z-index: 10;
-    margin-bottom: 0px;
-    justify-content: space-between;
-  }
-  
-  
-  
-  .Table {
-    position: relative; /* Keeps child elements positioned correctly */
-    min-width: 12%;
-    max-width: 16%;
-    height: 2.8rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color:transparent;
-    justify-content: center;
-  }
-  
-/* Overlay text (clickable/centered content) */
-.overlay-text {
-  font-size: 0.9rem;
-  font-weight: 900;
+.container {
+  position: fixed;
+  background-color:white;
+  display: flex;
+  flex: 1;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  object-fit: cover;
+  top: 0px;
+  float: left;
+  width: 100%;
+  height: auto;
+  max-height:54px ;
+  border-radius: 0px;
+  left: 0px;
+  border-style: none;
+  z-index: 10;
+  margin-bottom: 0px;
+  justify-content: space-between;
+}
+
+.Table {
+  position: relative;
+  min-width: 14%;  /* Slightly increased for better proportions */
+  max-width: 15.5%;
+  height: 3rem;  /* Adjusted for better spacing */
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color:transparent; 
-  z-index:0;
-  gap: 0.4rem;
+  background-color: transparent;
 }
 
-/* Gradient Text: NET */
+.overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 0.9rem; /* Increased size for better readability */
+  font-weight: 800; /* Slightly bolder */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 3;
+  background-color: transparent;
+  margin-left: 0px;
+}
+
+/* NET and TOON Styling */
 .net-text {
-  background: linear-gradient(red);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: 'Segoe UI', sans-serif;
-  letter-spacing: 1.5px;
-}
-
-/* Gradient Text: TOON */
-.toon-text {
-  background: linear-gradient(black);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: 'Segoe UI', sans-serif;
-  letter-spacing: 1.5px;
-}
-
-/* Shorts Styling */
-.shorts-text {
-  color: white;
-  font-size: 0.8em;
-  font-weight: bold;
   background:red;
-  padding: 2px 6px;
-  border-radius: 5px;
-  margin-left: 8px;
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
-  text-transform: uppercase;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.3em;
+  letter-spacing: 2px;
+}
+
+.toon-text {
+  background: black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.3em;
+  margin-left: 5px;
 }
 
 /* Dark Mode */
@@ -118,480 +107,478 @@ html {
 a, .net-text, .toon-text {
   text-decoration: none;
 }
-  .nav {
-    position: absolute;
-    width: 84.5%;
-    float: left;
-    margin-left: 15.3vw; /* Keeps navigation aligned on all screen sizes */
-    height: auto;
-    background-color:transparent;
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-items: center; /* Center items vertically */
-    justify-content: space-around; /* Ensure equal spacing */
-    gap: 5vw; /* Adjusts dynamically */
-    max-height: 5.4vh; /* Scales well across different devices */
-    margin-bottom: 1vh;
-  }
-  /* Main search container */
-  .search {
-    display: flex;
-    position: relative;
-    width: 90%;
-    max-width: 650px;
-    height: auto;
-    background-color:transparent;
-    margin: 2vh auto;
-    border-radius: 7px; /* Makes it more stylish */
-    align-items: center;
-    border: 0.3px solid #ccc;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for elegance */
-    transition: all 0.3s ease-in-out;
-    margin-top: 15px;
-  }
-  
-  /* Search input field */
-  .search input[type="search"] {
-    flex: 1;
-    height: 4.5vh;
-    min-height: 30px;
-    max-height: 30px;
-    border-radius: 7px; /* Makes it more stylish */
-    background-color:transparent;
-    border: none;
-    padding: 0.7rem 3rem 0.7rem 2.5rem; /* Adjust spacing */
-    color: #333;
-    font-size: 1rem;
-    outline: none;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  /* Search input focus effect */
-  .search input[type="search"]:focus {
-    border: 1px solid white;
-    box-shadow: 0px 0px 8px none;
-  }
-  
-  
-  /* Clear button */
-  .clear-btn {
-    position: absolute;
-    right: 1rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-    color: #666;
-    display: none; /* Hidden by default */
-  }
-  
-  /* Show clear button when text is entered */
-  .search input[type="search"]:valid ~ .clear-btn {
-    display: block;
-  }
-  
-  
-  /* Dark mode input */
-  body.dark-mode .search input[type="search"] {
-    color: #fff;
-  }
-  
-  /* Placeholder styling */
-  .search input[type="search"]::placeholder {
-    color: #36454F;
-    font-size: 0.9rem; /* Ensures readability */
-  }
-  
-  body.dark-mode .search input[type="search"]::placeholder {
-    color: #D3D3D3;
-  }
-  
-  /* Search Icon Styling */
-  .search .search-icon {
-    position: absolute;
-    right: 12px; /* Adjust distance for better alignment */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 1.5rem;
-    height: 1.5rem;
-    min-width: 20px;
-    min-height: 20px;
-    background-color:transparent;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* Hide the clear button across all browsers */
-  .search input[type="search"]::-webkit-search-decoration,
-  .search input[type="search"]::-webkit-search-cancel-button,
-  .search input[type="search"]::-webkit-search-results-button,
-  .search input[type="search"]::-webkit-search-results-decoration {
-    display: none; 
-  }
-  
-  /* Prevent autofill background color change */
-  .search input[type="search"]:-webkit-autofill,
-  .search input[type="search"]:-webkit-autofill:hover,
-  .search input[type="search"]:-webkit-autofill:focus,
-  .search input[type="search"]:-webkit-autofill:active {
-    background-color:none !important;
-    color: #333 !important;
-    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
-    box-shadow: 0 0 0px 1000px white inset !important;
-    transition: background-color 5000s ease-in-out 0s; /* Prevent flickering */
-  }
-  
-  
-  
+
+.nav {
+  position: absolute;
+  width: 87%;
+  float: left;
+  margin-left: 13.1vw; /* Keeps navigation aligned on all screen sizes */
+  height: auto;
+  background-color:transparent; 
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center; /* Center items vertically */
+  justify-content: space-around; /* Ensure equal spacing */
+  gap: 5vw; /* Adjusts dynamically */
+  max-height: 5.8567vh; /* Scales well across different devices */
+  margin-bottom: 1vh;
+}
+
+/* Main search container */
+.search {
+  display: flex;
+  position: relative;
+  width: 90%;
+  max-width: 850px; /* was 600px */
+  height: auto;
+  background-color:transparent; 
+  margin: 2vh auto;
+  border-radius: 7px;
+  align-items: center;
+  border: 0.3px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  margin-top: 15px;
+  margin-left: 40px;
+}
+
+/* Search input field */
+.search input[type="search"] {
+  flex: 1;
+  height: 4.5vh;
+  min-height: 20px;
+  max-height: 20px;
+  border-radius: 7px;
+  background-color: transparent;
+  border: none;
+  padding: 0.7rem 3rem 0.7rem 2.5rem;
+  color: #333;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Search input focus effect */
+.search input[type="search"]:focus {
+  border: 1px solid white;
+  box-shadow: 0px 0px 8px none;
+}
+
+
+/* Clear button */
+.clear-btn {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #666;
+  display: none; /* Hidden by default */
+}
+
+/* Show clear button when text is entered */
+.search input[type="search"]:valid ~ .clear-btn {
+  display: block;
+}
+
+
+/* Dark mode input */
+body.dark-mode .search input[type="search"] {
+  color: #fff;
+}
+
+/* Placeholder styling */
+.search input[type="search"]::placeholder {
+  color: #36454F;
+  font-size: 0.9rem; /* Ensures readability */
+}
+
+body.dark-mode .search input[type="search"]::placeholder {
+  color: #D3D3D3;
+}
+
+/* Search Icon Styling */
+.search .search-icon {
+  position: absolute;
+  right: 12px; /* Adjust distance for better alignment */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  min-width: 20px;
+  min-height: 20px;
+  background-color:transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hide the clear button across all browsers */
+.search input[type="search"]::-webkit-search-decoration,
+.search input[type="search"]::-webkit-search-cancel-button,
+.search input[type="search"]::-webkit-search-results-button,
+.search input[type="search"]::-webkit-search-results-decoration {
+  display: none; 
+}
+
+/* Prevent autofill background color change */
+.search input[type="search"]:-webkit-autofill,
+.search input[type="search"]:-webkit-autofill:hover,
+.search input[type="search"]:-webkit-autofill:focus,
+.search input[type="search"]:-webkit-autofill:active {
+  background-color:none !important;
+  color: #333 !important;
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  box-shadow: 0 0 0px 1000px white inset !important;
+  transition: background-color 5000s ease-in-out 0s; /* Prevent flickering */
+}
+
+
+
+.upload {
+  position: relative;
+  width: 3vw;
+  height: 3vw;
+  background-color: transparent;
+  margin-top: 0;
+  margin-left: 1vw;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+}
+
+/* Upload Icon */
+.upload img {
+  width: 2.4vw;
+  height: 2.4vw;
+  padding: 0.5vh;
+  object-fit: contain;
+
+}
+
+
+/* Tooltip Styling */
+.tooltip {
+  position: absolute;
+  top: 110%; /* Positioned below the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.3rem;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Show tooltip on hover */
+.upload:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(3px);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
   .upload {
-    position: relative;
-    width: 3vw;
-    height: 3vw;
-    background-color: transparent;
-    margin-top: 0;
-    margin-left: 1vw;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  
+    width: 5vw;
+    height: 5vw;
   }
-  
-  /* Upload Icon */
+
   .upload img {
-    width: 2.4vw;
-    height: 2.4vw;
-    padding: 0.5vh;
-    object-fit: contain;
-  
+    width: 3.5vw;
+    height: 3.5vw;
   }
-  
-  
-  /* Tooltip Styling */
+
   .tooltip {
-    position: absolute;
-    top: 110%; /* Positioned below the icon */
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    font-size: 0.9rem;
-    padding: 0.4rem 0.7rem;
-    border-radius: 0.3rem;
-    white-space: nowrap;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
   }
-  
-  /* Show tooltip on hover */
-  .upload:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(3px);
+}
+
+@media screen and (max-width: 480px) {
+  .upload {
+    width: 7vw;
+    height: 7vw;
   }
-  
-  /* Responsive Adjustments */
-  @media screen and (max-width: 768px) {
-    .upload {
-      width: 5vw;
-      height: 5vw;
-    }
-  
-    .upload img {
-      width: 3.5vw;
-      height: 3.5vw;
-    }
-  
-    .tooltip {
-      font-size: 0.8rem;
-      padding: 0.3rem 0.6rem;
-    }
+
+  .upload img {
+    width: 5vw;
+    height: 5vw;
   }
-  
-  @media screen and (max-width: 480px) {
-    .upload {
-      width: 7vw;
-      height: 7vw;
-    }
-  
-    .upload img {
-      width: 5vw;
-      height: 5vw;
-    }
-  
-    .tooltip {
-      font-size: 0.75rem;
-      padding: 0.2rem 0.5rem;
-    }
+
+  .tooltip {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
   }
-  /* Notifications Icon */
+}
+/* Notifications Icon */
+.Notifications {
+  position: relative;
+  width: 3vw;
+  height: 3vw;
+  background-color: transparent;
+  margin: 0.3125rem 0 0.1875rem 1.25rem; /* Top, Right, Bottom, Left */
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* Icon inside the Notification button */
+.Notifications img {
+  width: 2vw;
+  height: 2vw;
+
+}
+
+
+
+/* Notification Dropdown */
+.Notification-container {
+  display: none; /* Hidden by default */
+  position: absolute;
+  width: 24%;
+  min-width: 11.25em; /* 180px */
+  max-height: 40em; /* Prevents excessive height */
+  background-color: #333; /* Dark mode background */
+  color: white;
+  top: 100%; /* Positioned below the icon */
+  right: 1%;
+  border-radius: 0.5em;
+  box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.2);
+  overflow-y: auto; /* Enables scrolling for multiple notifications */
+  z-index: 30;
+  padding: 1rem;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Active class to show dropdown smoothly */
+.Notification-container.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
   .Notifications {
-    position: relative;
-    width: 3vw;
-    height: 3vw;
-    background-color: transparent;
-    margin: 0.3125rem 0 0.1875rem 1.25rem; /* Top, Right, Bottom, Left */
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
+    width: 4vw;
+    height: 4vw;
   }
-  
-  /* Icon inside the Notification button */
+
   .Notifications img {
-    width: 2vw;
-    height: 2vw;
-  
-  }
-  
-  
-  
-  /* Notification Dropdown */
-  .Notification-container {
-    display: none; /* Hidden by default */
-    position: absolute;
-    width: 24%;
-    min-width: 11.25em; /* 180px */
-    max-height: 40em; /* Prevents excessive height */
-    background-color: #333; /* Dark mode background */
-    color: white;
-    top: 100%; /* Positioned below the icon */
-    right: 1%;
-    border-radius: 0.5em;
-    box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.2);
-    overflow-y: auto; /* Enables scrolling for multiple notifications */
-    z-index: 30;
-    padding: 1rem;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
-  }
-  
-  /* Active class to show dropdown smoothly */
-  .Notification-container.active {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  /* Responsive Adjustments */
-  @media screen and (max-width: 768px) {
-    .Notifications {
-      width: 4vw;
-      height: 4vw;
-    }
-  
-    .Notifications img {
-      width: 3vw;
-      height: 3vw;
-    }
-  
-    .Notification-container {
-      width: 40%;
-      right: 2%;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .Notifications {
-      width: 6vw;
-      height: 6vw;
-    }
-  
-    .Notifications img {
-      width: 4vw;
-      height: 4vw;
-    }
-  
-    .Notification-container {
-      width: 60%;
-      right: 5%;
-    }
-  }
-  /* Account Icon */
-  .Account {
-    position: relative;
     width: 3vw;
     height: 3vw;
-    background-color: transparent;
-    margin: 0 1.5625rem 0.1875rem 0; /* Right, Bottom */
-  
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    cursor: pointer;
-    float: right;
-    margin-right: 1rem;
-  
   }
-  
-  /* Profile Image inside Account Icon */
-  .Account img {
-    width: 2vw;
-    height: 2vw;
-    border-radius: 50%;
-  
-    margin-top: 6px;
+
+  .Notification-container {
+    width: 40%;
+    right: 2%;
   }
-  
-  /* Dropdown Wrapper */
-  .account-dropdown {
-    position: relative;
-    display: inline-block;
+}
+
+@media screen and (max-width: 480px) {
+  .Notifications {
+    width: 6vw;
+    height: 6vw;
   }
-  
-  
-  .dropdown-content {
-    display: none; /* Hidden by default */
-    position: absolute;
-    width: 24%;
-    height: auto;
-    background-color: #333; /* Example background for dark mode */
-    min-width: 11.25em; /* Converted from 180px */
-    box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.2);
-    margin-top:20%;  /* Adjusted to percentage for better scaling */
-    float: left;
-    margin-left: 100%; /* Centering based on container width */
-    transform: translateX(-50%); /* Ensures it remains centered */
-    border-radius: 0.5em; /* Converted from 7px */
-    max-height: 25em; /* Converted from 600px */
-    z-index: 30;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  overflow: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.5) white;
+
+  .Notifications img {
+    width: 4vw;
+    height: 4vw;
   }
-  
-  
-  .dropdown-content a {
-    
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block; /* Make links block elements */
+
+  .Notification-container {
+    width: 60%;
+    right: 5%;
   }
-  /* Profile Section */
-  .proofile {
-    width: 85%;
-    min-height: 1.875em; /* 30px */
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    background-color: white;
-    padding: 0.625em; /* 10px */
-    border-radius: 0.4375em; /* 7px */
-    max-width: 90%;
-    transition: all 0.3s ease-in-out;
-  }
+}
+/* Account Icon */
+.Account {
+  position: relative;
+  width: 3vw;
+  height: 3vw;
+  background-color: transparent;
+  margin: 0 1.5625rem 0.1875rem 0; /* Right, Bottom */
+
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  float: right;
+  margin-right: 1rem;
+
+}
+
+/* Profile Image inside Account Icon */
+.Account img {
+  width: 2vw;
+  height: 2vw;
+  border-radius: 50%;
+
+  margin-top: 6px;
+}
+
+/* Dropdown Wrapper */
+.account-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+
+.dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute;
+  width: 24%;
+  height: auto;
+  background-color: #333; /* Example background for dark mode */
+  min-width: 11.25em; /* Converted from 180px */
+  box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.2);
+  margin-top:20%;  /* Adjusted to percentage for better scaling */
+  float: left;
+  margin-left:99%; /* Centering based on container width */
+  transform: translateX(-50%); /* Ensures it remains centered */
+  border-radius: 0.5em; /* Converted from 7px */
+  max-height: 25em; /* Converted from 600px */
+  z-index: 30;
+overflow-y: scroll;
+overflow-x: hidden;
+overflow: auto;
+scrollbar-width: thin;
+scrollbar-color: rgba(0, 0, 0, 0.5) white;
+}
+
+
+.dropdown-content a {
   
-  /* Hover Effect */
-  .proofile:hover {
-    background-color:white; /* Subtle purple hover effect */
-    color:black;
-    transform: scale(1.05);
-    cursor: pointer;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  
-  
-  /* Profile Image */
-  .proofile img {
-    width: 1.6875em; /* 27px */
-    height: 1.6875em;
-    border-radius: 50%;
-    margin-right: 0.625em; /* 10px */
-  }
-  
-  /* Profile Name */
-  .proofile label {
-    font-weight: bold;
-    font-size: 0.875em; /* 14px */
-    color: black;
-    margin-left:1.5em; /* 5px */
-    text-align: left;
-    margin-top: 5px;
-    max-width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  /* Change text color on hover */
-  .proofile:hover label {
-    color:black;
-  }
-  
-  
-  .dropdown-content li {
-    list-style: none; /* Remove bullet points */
-  }
-  
-  
-  /* Show the dropdown on hover */
-  .account-dropdown:hover .dropdown-content {
-    display: block; /* Show dropdown when hovering over Account */
-  }
-  
-  /* Optional: Add transition for smoother appearance */
-  .dropdown-content {
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-  }
-  /* Tooltip Base */
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; /* Make links block elements */
+}
+/* Profile Section */
+.proofile {
+  width: 85%;
+  min-height: 1.875em; /* 30px */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: white;
+  padding: 0.625em; /* 10px */
+  border-radius: 0.4375em; /* 7px */
+  max-width: 90%;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.proofile:hover {
+  background-color:white; /* Subtle purple hover effect */
+  color:black;
+  transform: scale(1.05);
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Profile Image */
+.proofile img {
+  width: 1.6875em; /* 27px */
+  height: 1.6875em;
+  border-radius: 50%;
+  margin-right: 0.625em; /* 10px */
+}
+
+/* Profile Name */
+.proofile label {
+  font-weight: bold;
+  font-size: 0.875em; /* 14px */
+  color: black;
+  margin-left: 0.3125em; /* 5px */
+  text-align: left;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.3s ease-in-out;
+  margin-top:5px;
+}
+
+
+
+
+.dropdown-content li {
+  list-style: none; /* Remove bullet points */
+}
+
+
+/* Show the dropdown on hover */
+.account-dropdown:hover .dropdown-content {
+  display: block; /* Show dropdown when hovering over Account */
+}
+
+
+/* Tooltip Base */
+.tooltip {
+  position: absolute;
+  bottom: -2rem; /* Positions below the icon */
+  left: 50%;
+  transform: translateX(-50%) translateY(5px); /* Subtle offset */
+  background-color: #333;/* Slightly darker for better contrast */
+  color: white;
+  z-index: 10;
+  padding: 0.5em 1em; /* More padding for readability */
+  border-radius: 0.375em; /* Smooth rounded corners */
+  white-space: nowrap;
+  font-size: 0.875em; /* Optimized for readability */
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+  pointer-events: none; /* Prevents accidental hover issues */
+}
+
+/* Tooltip Hover Effect */
+.upload:hover .tooltip, 
+.Notifications:hover .tooltip, 
+.Account:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
   .tooltip {
-    position: absolute;
-    bottom: -2rem; /* Positions below the icon */
-    left: 50%;
-    transform: translateX(-50%) translateY(5px); /* Subtle offset */
-    background: rgba(0, 0, 0, 0.8); /* Slightly darker for better contrast */
-    color: white;
-    z-index: 10;
-    padding: 0.5em 0.75em; /* More padding for readability */
-    border-radius: 0.375em; /* Smooth rounded corners */
-    white-space: nowrap;
-    font-size: 0.875em; /* Optimized for readability */
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
-    pointer-events: none; /* Prevents accidental hover issues */
+    font-size: 0.75em; /* Reduce text size on smaller screens */
+    padding: 0.4em 0.6em;
   }
+}
+
+@media screen and (max-width: 480px) {
+  .tooltip {
+    font-size: 0.6875em; /* Further reduce size for compact screens */
+    bottom: -1.75rem; /* Adjust positioning */
+  }
+}
   
-  /* Tooltip Hover Effect */
-  .upload:hover .tooltip, 
-  .Notifications:hover .tooltip, 
-  .Account:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-  
-  /* Responsive Adjustments */
-  @media screen and (max-width: 768px) {
-    .tooltip {
-      font-size: 0.75em; /* Reduce text size on smaller screens */
-      padding: 0.4em 0.6em;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .tooltip {
-      font-size: 0.6875em; /* Further reduce size for compact screens */
-      bottom: -1.75rem; /* Adjust positioning */
-    }
-  }
     .sidebar {
       display:block;
       position: fixed;
@@ -674,7 +661,8 @@ a, .net-text, .toon-text {
   
  
   .signup-container {
-    background: white;
+    background-color: #F8F8FF; /* Ghost White */
+    border: 1px solid #ccc; /* Light grey border */
     z-index: 11;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -706,8 +694,29 @@ h2 {
     max-width: 100%;
     padding: 5px 0; /* Adds some spacing inside */
     margin: 0; /* Removes any unwanted margin */
-    border-radius: 7px;
+    border-radius: 0px;
+    font-weight: bold;
+    font-weight: 800;
+
 }
+
+
+  .net {
+    color: red;
+  }
+  
+  .toon {
+    color: black;
+  }
+  
+  /* Dark mode styles */
+  body.dark-mode .toon {
+    color: yellow;
+  }
+  
+  body.dark-mode .net {
+    color: red;
+  }
 
 
 .dark-mode h2 {  background-color: #222;
@@ -735,11 +744,13 @@ input, select, textarea {
     align-items: center;
     border-radius: 5px;
     overflow: hidden;
-    width: 100%;
+    width:99%;
     max-width: 800px; /* Adjust as needed */
     background-color: transparent;
     gap:10px;
     margin-top: 20px;
+    border-style:none;
+    border: 1px solid  transparent;
 }
 
 #country-code {    background-color: #f8f8f8;
@@ -795,6 +806,7 @@ input, select, textarea {
 
 .reminder label {
   margin: 0; /* No need for auto margin if parent is flex-centered */
+  font-weight: 800;
 }
 
 
@@ -848,7 +860,8 @@ background-color: #121212;
 .dark-mode .container .search img,
 .dark-mode .container .upload img,
 .dark-mode .container .Notifications img,
-.dark-mode .container .Settings img
+.dark-mode .container .Settings img,
+.dark-mode .container .Account img
 {
 filter: invert(1);
 

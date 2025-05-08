@@ -37,62 +37,51 @@ body {
   justify-content: space-between;
 }
 
-
-/* Container */
 .Table {
   position: relative;
-  width: fit-content;
-  padding: 0.5rem 0.5rem;
+  min-width: 14%;  /* Slightly increased for better proportions */
+  max-width: 15.5%;
+  height: 3rem;  /* Adjusted for better spacing */
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color:transparent; /* Dark background like TikTok */
-  border-radius: 0rem;
-  cursor: pointer;
+  background-color: transparent;
 }
 
-
-/* Overlay text (clickable/centered content) */
 .overlay-text {
-  font-size: 1.7rem;
-  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1.25rem; /* Increased size for better readability */
+  font-weight: 800; /* Slightly bolder */
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color:transparent; 
-  z-index:0;
-  gap: 0.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  z-index: 3;
+  background-color: transparent;
+  margin-left: 0px;
 }
 
-/* Gradient Text: NET */
+/* NET and TOON Styling */
 .net-text {
-  background: linear-gradient(red);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: 'Segoe UI', sans-serif;
-  letter-spacing: 1.5px;
-}
-
-/* Gradient Text: TOON */
-.toon-text {
-  background: linear-gradient(black);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: 'Segoe UI', sans-serif;
-  letter-spacing: 1.5px;
-}
-
-/* Shorts Styling */
-.shorts-text {
-  color: white;
-  font-size: 0.8em;
-  font-weight: bold;
   background:red;
-  padding: 2px 6px;
-  border-radius: 5px;
-  margin-left: 8px;
-  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
-  text-transform: uppercase;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.3em;
+  letter-spacing: 2px;
+}
+
+.toon-text {
+  background: black;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.3em;
+  margin-left: 5px;
 }
 
 /* Dark Mode */
@@ -118,6 +107,7 @@ body {
 a, .net-text, .toon-text {
   text-decoration: none;
 }
+
 .nav {
   position: absolute;
   width: 87%;
@@ -161,7 +151,7 @@ a, .net-text, .toon-text {
   max-height: 30px;
   border-radius: 7px;
   background-color: transparent;
-  border: none;
+  border: 0.1px solid grey; 
   padding: 0.7rem 3rem 0.7rem 2.5rem;
   color: #333;
   font-size: 1rem;
@@ -459,9 +449,9 @@ body.dark-mode .search input[type="search"]::placeholder {
   background-color: #333; /* Example background for dark mode */
   min-width: 11.25em; /* Converted from 180px */
   box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.2);
-  margin-top:34%;  /* Adjusted to percentage for better scaling */
+  margin-top:33%;  /* Adjusted to percentage for better scaling */
   float: left;
-  margin-left: 100%; /* Centering based on container width */
+  margin-left:98.5%; /* Centering based on container width */
   transform: translateX(-50%); /* Ensures it remains centered */
   border-radius: 0.5em; /* Converted from 7px */
   max-height: 25em; /* Converted from 600px */
@@ -630,15 +620,14 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
   }
   
   .home {
+    
     width: 100%;
     height: 3.125rem; /* Converted from 50px */
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     background-color: transparent;
-    border-radius: 0;
-
-
+    border-radius: 0px;
     box-sizing: border-box;
     padding: 0 0.9375rem; /* Converted from 15px */
     margin: 3.125rem 0 2.5rem 0; /* Adjusted margin values */
@@ -655,12 +644,15 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
   }
   
   .home label {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    font-weight: 500;          /* Medium */
+    font-size: 1rem;           /* ~16px */
+    line-height: 1.5;
+    color: black;   
+    font-family: 'Poppins', sans-serif;
     flex-grow: 1;
     text-align: center;
-    color: #333333;
-    font-weight: 300; /* Use numerical weight for better compatibility */
-    font-size: 0.8125rem; /* Converted from 13px */
-    white-space: nowrap; /* Prevents text wrapping */
+    font-size: 0.8125rem; /* Converted from 13px */  white-space: nowrap; /* Prevents text wrapping */
     overflow: hidden;
     text-overflow: ellipsis; /* Ensures long text is truncated */
   }
@@ -743,7 +735,7 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
 .rectanglee {
   flex-grow: 1;
   height: 1.875rem; /* Converted from 30px */
-  background-color: #F5F5F5;
+  background-color: #F5F5F5; /* Pale Grey */
   border-radius: 0.375rem; /* Converted from 6px */
   margin-top:1.3rem; /* Converted from 15px */
   display: flex;
@@ -773,9 +765,9 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
 
 /* Hover Effect */
 .rectanglee:hover {
-  background-color: #ddd;
-  color: #000 !important; /* Ensures text remains visible */
-  transform: scale(1.05); /* Slight enlargement for better interaction */
+  background-color:grey;
+  color: white !important; /* Ensures text remains visible */
+
 }
 /* Hover Effect */
 .dark-mode.rectanglee:hover {
@@ -843,9 +835,8 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
   left: 10%;
   overflow: hidden;
   margin: 0;
-  gap: 3.2rem; /* Controls both horizontal and vertical spacing */
+  gap:2rem; /* Controls both horizontal and vertical spacing */
   padding: 0.5rem 0;
-
 }
 
 /* Individual Video Containers */
@@ -858,6 +849,8 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   cursor: pointer;
 margin-left: 10px;
+margin-top: 20px;
+
 }
 
 
@@ -1163,7 +1156,9 @@ margin-left: 10px;
   flex-shrink: 1;
   max-width: 100%;
   color: black;
-  font-size: clamp(0.75rem, 1vw, 0.875rem); /* Responsive */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;          /* Regular */
+  font-size: clamp(0.9rem, 1vw, 0.875rem); /* Responsive */
 }
 
 /* Time Section */
@@ -1180,17 +1175,19 @@ margin-left: 10px;
 
 .time label {
   margin: 0;
-  font-size: clamp(0.875rem, 1vw, 1rem); /* Responsive font size */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
   color: black;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;          /* Regular */
+  font-size: clamp(0.9rem, 1vw, 0.875rem); /* Responsive */
 }
 
 /* Category Section */
 .category {
-  display: flex; /* Default hidden */
+  display: none; /* Default hidden */
   width: 30%;
   margin: 0.3125rem;
   align-items: center;
@@ -1203,13 +1200,13 @@ margin-left: 10px;
 /* Show Category Section on Larger Screens */
 @media screen and (min-width: 1024px) {
   .category {
-    display: flex; /* Default hidden */
+    display: none; /* Default hidden */
   }
 }
 
 .category label {
   margin: 0;
-  display: flex;
+  display: none; 
   align-items: center;
   white-space: nowrap;
   overflow: hidden;
@@ -1287,6 +1284,12 @@ width: 99%;
 /* Laptops */
 @media (min-width: 992px) and (max-width: 1440px)
  {
+
+.kontainer
+{
+  margin-bottom: 20px;
+}
+
 }
 
 
@@ -1437,7 +1440,7 @@ width: 24%;
 
 /* Dark Mode Styles */
 .dark-mode {
-  background-color: #121212; /* Black background for Dark Mode */
+  background-color: #161616;  /* Black background for Dark Mode */
   color: white; /* White text for Dark Mode */
 }
 
@@ -1462,7 +1465,7 @@ width: 24%;
 
 
 .dark-mode .sidebar{
-  background-color: #121212; 
+  background-color: #161616; 
   }
 
   .dark-mode .sidebar img
@@ -1490,12 +1493,12 @@ width: 24%;
 
 
 .dark-mode .container-1{
-  background-color: #121212; 
+  background-color: #161616; 
   }
 
 
 .dark-mode .suggestionss{
-  background-color: #121212; 
+  background-color: #161616; 
   }
 
 
@@ -1529,15 +1532,15 @@ width: 24%;
       }
 
 .dark-mode .container .nav{
-  background-color: #121212; 
+  background-color: #161616; 
    }
 
    .dark-mode .container .Table{
-    background-color: #121212; 
+    background-color: #161616; 
      }
 
      .dark-mode .container .Table .overlay-text{
-      background-color: #121212; 
+    background-color: #161616; 
        }
 
 
@@ -1550,5 +1553,13 @@ width: 24%;
   filter: invert(1);
 
 }
+
+:root {
+  --background-color: #181818; /* main background */
+  --card-background: #202020; /* metadata/sidebar */
+  --text-color: #FFFFFF;       /* main text */
+  --muted-text-color: #AAAAAA; /* for views, likes, timestamps */
+}
+
 
  

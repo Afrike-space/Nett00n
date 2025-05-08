@@ -150,16 +150,17 @@ a, .net-text, .toon-text {
   display: flex;
   position: relative;
   width: 90%;
-  max-width: 650px;
+  max-width: 850px; /* was 600px */
   height: auto;
-  background-color:transparent;
+  background-color:transparent; 
   margin: 2vh auto;
-  border-radius: 7px; /* Makes it more stylish */
+  border-radius: 7px;
   align-items: center;
   border: 0.3px solid #ccc;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for elegance */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
   margin-top: 15px;
+  margin-left: 40px;
 }
 
 /* Search input field */
@@ -168,10 +169,10 @@ a, .net-text, .toon-text {
   height: 4.5vh;
   min-height: 30px;
   max-height: 30px;
-  border-radius: 7px; /* Makes it more stylish */
-  background-color:transparent;
-  border: none;
-  padding: 0.7rem 3rem 0.7rem 2.5rem; /* Adjust spacing */
+  border-radius: 7px;
+  background-color: transparent;
+  border: 0.1px solid grey; 
+  padding: 0.7rem 3rem 0.7rem 2.5rem;
   color: #333;
   font-size: 1rem;
   outline: none;
@@ -183,7 +184,6 @@ a, .net-text, .toon-text {
   border: 1px solid white;
   box-shadow: 0px 0px 8px none;
 }
-
 
 /* Clear button */
 .clear-btn {
@@ -653,7 +653,7 @@ opacity: 1;
   justify-content: space-evenly; /* Evenly distributes children */
   gap: 3vw; /* Dynamic gap */
   border-radius: 0.5rem;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 /* Individual Stat Boxes */
@@ -864,7 +864,7 @@ margin-top: 20px;
   flex: 1; /* Equal flex value for consistent sizing */
   max-width: 18%; /* Prevents excessive stretching */
   height: clamp(1.8rem, 3vh, 2rem); /* Responsive height */
-  background-color: #F5F5F5;
+  background-color: #F5F5F5; /* Pale Grey */
   border-radius: 0.5rem;
   display: flex;
   align-items: center;
@@ -873,6 +873,7 @@ margin-top: 20px;
   text-overflow: ellipsis;
   white-space: nowrap;
   min-width: 3.5rem; /* Ensures visibility on small screens */
+  cursor: pointer;
 }
 
 /* Adjusted Flex for 'timess' Section */
@@ -897,6 +898,7 @@ margin-top: 20px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  color: #333333;
   font-size: clamp(14.5px, 1vw, 15px); /* Responsive font size */
 }
 
@@ -911,7 +913,7 @@ margin-top: 20px;
   justify-content: space-evenly; /* Even distribution */
   gap: 3vw; /* Dynamic gap */
   border-radius: 0.5rem;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 /* Shared styles for navigation items */
@@ -932,6 +934,7 @@ margin-top: 20px;
   text-align: center;
   gap: 3px;
   margin-top:4px;
+  cursor: pointer;
 }
 
 /* Images inside navigation items */
@@ -979,12 +982,12 @@ margin-top: 20px;
   margin-left:0%;
   display: flex;
   flex-wrap: wrap;
-  background-color:transparent;
+  background-color: transparent;
   border-radius: 7px;
   top: 0.4em;
   overflow: hidden;
   padding: 1rem 0;
-  gap: 2rem;
+  gap: 0.5rem;
   justify-content: flex-start;
   clear: both; /* 💥 This line makes it ignore container-2's float */
 }
@@ -992,16 +995,18 @@ margin-top: 20px;
 /* Individual Video Containers */
 .kontainer {
   position: relative;
-  width: clamp(29%, 2.1875rem, 32%); /* Ensures adaptive sizing */
-  height: auto;
+  width: clamp(22%, 2.1875rem, 32%); /* Ensures adaptive sizing */
+  height:233px;
   background-color: transparent;
   border-radius: 0.5rem; /* 7px */
-  margin-bottom: 0.5rem; /* 30px */
+  margin-bottom: 2rem; /* 30px */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   cursor: pointer;
   margin-left: 2%; 
   margin-top: 0px;
 }
+
+
 /* Video Thumbnails */
 .kontainer img {
   width: 100%;
@@ -1152,7 +1157,7 @@ margin-top: 20px;
 
 .videoo video {
   width: 100%;
-  height: 12.5rem; /* 200px */
+  height: 10rem; /* 200px */
   object-fit: cover;
   border-radius: 0.4375em; /* Converted from 7px */
   display: block;
@@ -1228,11 +1233,11 @@ margin-top: 20px;
   height: auto;
   background-color: transparent;
   margin-top: 1px;
-  border-radius: 0rem; /* 7px */
+  border-radius:7px; /* 7px */
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap; /* Prevent wrapping */
-  gap: 0.3125rem; /* 5px */
+  gap: 0.2rem; /* 5px */
 }
 
 /* Common Styling for All Sections */
@@ -1240,7 +1245,7 @@ margin-top: 20px;
   height: 1.875rem; /* 30px */
   background-color: transparent;
   margin: 0.3125rem 0;
-  border-radius: 0rem;
+  border-radius: 7px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -1248,8 +1253,8 @@ margin-top: 20px;
 
 /* Views Section */
 .views {
-  max-width: 25%;
-  min-width: 22%;
+  max-width: 26%;
+  min-width: 23%;
   display: flex;
   align-items: center;
   gap: 0.1875rem; /* 3px */
@@ -1258,7 +1263,7 @@ margin-top: 20px;
 .views img {
   width: 1.8vw;
   height: 1.8vw;
-  margin-left: 1rem;
+  margin-left: 0.2rem;
 }
 
 .views label {
@@ -1276,14 +1281,13 @@ margin-top: 20px;
 
 /* Time Section */
 .time {
-  flex-grow: 1;
-  max-width: 30%;
-  min-width: 27%;
+  flex-grow: 2;
+  max-width: 32%;
+  min-width: 28%;
   margin: 0.3125rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
 }
 
 .time label {
@@ -1492,7 +1496,7 @@ margin-top: 300px;
 
 /* Dark Mode Styles */
 .dark-mode {
-  background-color: #121212; /* Black background for Dark Mode */
+  background-color: #161616;  /* Black background for Dark Mode */
   color: white; /* White text for Dark Mode */
 }
 
@@ -1518,15 +1522,15 @@ margin-top: 300px;
 
 
 .dark-mode .container .nav{
-  background-color: #121212; 
+  background-color: #161616; ; 
    }
 
    .dark-mode .container .Table{
-    background-color: #121212; 
+    background-color: #161616; 
      }
 
      .dark-mode .container .Table .overlay-text{
-      background-color: #121212; 
+      background-color: #161616; 
        }
 
 
@@ -1548,16 +1552,26 @@ margin-top: 300px;
   .dark-mode .caption label{
     color:white; 
     }
-  
+
 
     .dark-mode .sectiionn .views label,
+    .dark-mode .sectiionn .time label,
     .dark-mode .sectiionn .category label
     
     
     {
-      color:#FFFAFA;
+      color:white;
     
     }
+    
+    .dark-mode .sectiionn .views img
+    
+    
+    {
+      filter: invert(1);
+    
+    }
+    
     
     .dark-mode .sectiionn .views img
     {

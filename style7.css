@@ -9,7 +9,7 @@ body {
   text-align: center; /* Keeps text centered */
   background-color: white; 
   font-family: 'Poppins', sans-serif;
-  overflow-y: auto;
+  overflow-y:hidden;
   overflow-x: hidden;
   margin: 0; 
   min-height: 100vh; /* Ensures full height on all screens */
@@ -151,18 +151,18 @@ a, .net-text, .toon-text {
   max-height: 30px;
   border-radius: 7px;
   background-color: transparent;
-  border: none;
+  border: 0.1px solid grey; 
   padding: 0.7rem 3rem 0.7rem 2.5rem;
   color: #333;
   font-size: 1rem;
   outline: none;
-  transition: all 0.3s ease-in-out;
+
 }
 
 /* Search input focus effect */
 .search input[type="search"]:focus {
-  border: 1px solid white;
-  box-shadow: 0px 0px 8px none;
+  border: 1px solid black; /* Change to a noticeable color (e.g., blue) *//* Soft blue shadow */
+  outline: none; /* Remove default outline */
 }
 
 
@@ -744,16 +744,18 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
 }
 
 .home label {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  font-weight: 500;          /* Medium */
+  font-size: 1rem;           /* ~16px */
+  line-height: 1.5;
+  color: black;   
+  font-family: 'Poppins', sans-serif;
   flex-grow: 1;
   text-align: center;
-  color: #333333;
-  font-weight: 300; /* Use numerical weight for better compatibility */
-  font-size: 0.8125rem; /* Converted from 13px */
-  white-space: nowrap; /* Prevents text wrapping */
+  font-size: 0.8125rem; /* Converted from 13px */  white-space: nowrap; /* Prevents text wrapping */
   overflow: hidden;
   text-overflow: ellipsis; /* Ensures long text is truncated */
 }
-
 
 .home:hover,
 .dark-mode .home:hover {
@@ -765,7 +767,7 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
   position: relative;
   width:86%;
   height: 100vh;
-  background-color: transparent;
+  background-color:transparent;
   margin: 49px 0 0 180px;
   display: flex;
   flex-wrap: wrap;
@@ -779,7 +781,7 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
   position: relative;
   width:93%;
   height: auto;
-  background-color: transparent;
+  background-color:transparent;
 display:flex;
 flex-wrap: nowrap;
 margin: 0px 0 0 0px;
@@ -796,7 +798,7 @@ padding: 5px;
   object-fit: cover;
   border-radius: 12px;
   overflow: hidden;
-  margin: 49px 0 0 300px;
+  margin:60px 0 0 260px;
   margin-bottom: 5px;
   transition: margin 0s ease; /* Smooth movement */
 }
@@ -828,8 +830,8 @@ padding: 5px;
   align-items: center;
   background-color: transparent;
   position: absolute; /* Ensure it stays in the same place */
-  top: 17%; /* Adjust the top position */
-  right: 270px; /* Adjust this value if necessary */
+  top: 21%; /* Adjust the top position */
+  right: 310px; /* Adjust this value if necessary */
   z-index: 10000;
   
 }
@@ -887,34 +889,54 @@ padding: 5px;
   filter: invert(1);
 }
 
-
 .comment-container {
-  display: none;
+  display: none; /* Initially hidden */
   position: absolute;
-  top: 53px; /* Adjust this to position it correctly */
-  left: 570px; /* Adjust this to position it correctly */
+  top: 70px; /* Adjust as needed */
+  left: 570px; /* Adjust as needed */
   width: 40%;
   height: 700px;
-  background-color: palegreen;
+  background-color: transparent;
+  border: 1px solid black;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5); /* Changed to rgba for shadow */
   border-radius: 12px;
- z-index: 10;
+  z-index: 10;
+  opacity: 0; /* Start with 0 opacity */
+  transition: opacity 0.4s ease; /* Smooth transition for opacity */
 }
-
-.comment-container {
-  transition: right 0.4s ease; /* Add this line */
-}
-
 
 .comment-container.show {
-  display: block;
+  display: block; /* Show when class is added */
+  opacity: 1; /* Fade in effect */
 }
 
+.dark-mode .comment-container {
+  border: 1px solid white;
+}
+
+.comments {
+  position: relative;
+  width: 100%;
+  height: 200px; /* Increased height for visibility */
+  z-index: 1000; /* Increased z-index */
+  border-style: ridge;
+  background-color: green;
+  margin-top: 20px; /* Adjusted margin */
+  display: flex; /* Optional: use flex for centering content */
+  align-items: center; /* Center content vertically */
+  color: white; /* Text color for visibility */
+  padding: 10px; /* Added padding for better appearance */
+}
+
+.dark-mode .comments {
+  border: 1px solid white;
+}
 
 /* Controls Styling */
 .controls {
   position: fixed;
   top: 50%;
-  right: 15px;
+  right:30px;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -944,7 +966,7 @@ padding: 5px;
 
 /* Dark Mode Styles */
 .dark-mode {
-  background-color: #121212; /* Black background for Dark Mode */
+  background-color:		#161616; /* Black background for Dark Mode */
   color: white; /* White text for Dark Mode */
 }
 
@@ -971,15 +993,19 @@ padding: 5px;
     }
   
 .dark-mode .container .nav{
-  background-color: #121212; 
+  background-color: #161616; 
    }
 
+   .dark-mode .container-1{
+    background-color: #161616; 
+     }
+
    .dark-mode .container .Table{
-    background-color: #121212; 
+    background-color:		#161616; 
      }
 
      .dark-mode .container .Table .overlay-text{
-      background-color: #121212; 
+      background-color:		#161616; 
        }
 
 
@@ -996,7 +1022,7 @@ padding: 5px;
 
 
 .dark-mode .sidebar{
-  background-color: #121212; 
+  background-color: #161616; 
   }
 
   .dark-mode .sidebar img
