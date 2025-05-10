@@ -1574,25 +1574,24 @@ textarea.auto-expand {
   padding: 3px;
 }
 
-/* Dark Mode */
 .dark-mode .like,
 .dark-mode .reply,
-.dark-mode .sidebarr {
+.dark-mode .sidebar {
   background-color: #353839;
 }
 
-
-.like img, .dislike img, .reply img, .sidebarr img {
+.like img, .dislike img, .reply img, .sidebar img {
   width: 22px;
   height: 22px;
-  margin-right: 5px; /* Space between image and label */
+  margin-right: 5px;
 }
 
-.dark-mode .like img, .dislike img, .reply img, .sidebarr img
- {
+.dark-mode .like img,
+.dark-mode .dislike img,
+.dark-mode .reply img,
+.dark-mode .sidebar img {
   filter: invert(1);
 }
-
 
 .like label, .dislike label, .reply label {
   margin-top: 0; /* Remove top margin to align vertically */

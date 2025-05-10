@@ -9,7 +9,7 @@ body {
   text-align: center; /* Keeps text centered */
   background-color: white; 
   font-family: 'Poppins', sans-serif;
-  overflow-y:hidden;
+  overflow-y:auto;
   overflow-x: hidden;
   margin: 0; 
   min-height: 100vh; /* Ensures full height on all screens */
@@ -151,18 +151,20 @@ a, .net-text, .toon-text {
   max-height: 30px;
   border-radius: 7px;
   background-color: transparent;
-  border: 0.1px solid grey; 
+  border: none;
   padding: 0.7rem 3rem 0.7rem 2.5rem;
   color: #333;
   font-size: 1rem;
   outline: none;
-
+  transition: all 0.3s ease-in-out;
 }
 
 /* Search input focus effect */
 .search input[type="search"]:focus {
-  border: 1px solid black; /* Change to a noticeable color (e.g., blue) *//* Soft blue shadow */
+  border: 3px solid grey; /* Change to a noticeable color (e.g., blue) */
+  box-shadow: 0px 0px 8px grey; /* Soft blue shadow */
   outline: none; /* Remove default outline */
+  background-color: #f0f0f0; /* Light background for better contrast */
 }
 
 
@@ -767,7 +769,7 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
   position: relative;
   width:86%;
   height: 100vh;
-  background-color:transparent;
+  background-color: transparent;
   margin: 49px 0 0 180px;
   display: flex;
   flex-wrap: wrap;
@@ -780,35 +782,37 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
 {
   position: relative;
   width:93%;
-  height: auto;
-  background-color:transparent;
+  height: 850px;
+  background-color: transparent;
 display:flex;
 flex-wrap: nowrap;
 margin: 0px 0 0 0px;
 z-index: 0;
-padding: 5px;
+padding: 0px;
 }
-
 
 .short-video {
   position: relative;
-  width: 40%;
+  width: 100%;
+  max-width: 500px; /* TikTok-like width */
   aspect-ratio: 9 / 16;
-  max-height: 700px;
-  object-fit: cover;
-  border-radius: 12px;
   overflow: hidden;
-  margin:60px 0 0 260px;
-  margin-bottom: 5px;
-  transition: margin 0s ease; /* Smooth movement */
-}
-
-.short-video {
+  border-radius: 12px;
+  margin: 10px 0 10px 180px;
   transition: margin-left 0s ease;
 }
 
+
+.short-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* or contain, depending on your goal */
+  border-radius: 12px;
+  display: block;
+}
+
 .short-video.shift-left {
-  margin-left: 50px; /* Change this to 100px as per your requirement */
+  margin-left: 5px; /* Adjusted as needed */
 }
 
 .comment-container {
@@ -819,6 +823,98 @@ padding: 5px;
   display: block;
 }
 
+.Profile {
+  position: absolute;
+  z-index: 1;
+  background-color: transparent;
+  width: 397px; /* Fixed width */
+  height: 50px;
+  bottom: 15%;
+  left: 1px; /* Fixed position */
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  border-radius: 8px;
+}
+
+.Profile img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.Profile label
+{
+  color:white;
+}
+
+
+.Profile.shift-up {
+  bottom: 25.5%; /* Moves it up when see more is shown */
+}
+
+.caption {
+  position: absolute;
+  z-index: 0;
+  background-color: transparent;
+  width: 380px;
+  height: auto;
+  bottom: 1%;
+  left: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.caption label
+{
+color:black;
+
+
+}
+
+.caption-toggle {
+  background: none;
+  border: none;
+  color: yellow;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  margin-top: 5px;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .short-video {
+    width: 90%;
+    margin: 40px auto;
+  }
+
+  .Profile,
+  .caption {
+    width: 90%;
+    font-size: 14px;
+    height: auto;
+    padding: 10px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .Profile img {
+    margin: 0 0 8px 0;
+  }
+}
 
 
 .metadata {
@@ -830,46 +926,56 @@ padding: 5px;
   align-items: center;
   background-color: transparent;
   position: absolute; /* Ensure it stays in the same place */
-  top: 21%; /* Adjust the top position */
-  right: 310px; /* Adjust this value if necessary */
+  top: 20%; /* Adjust the top position */
+  right:350px; /* Adjust this value if necessary */
   z-index: 10000;
-  
+  border-radius: 7%;
 }
 
 .metadata {
   transition: right 0s ease; /* Add this line */
 }
 
-
 .metadata.shift-left {
-  right: calc(270px + 250px); /* or adjust as needed for same shift as video */
-  transition: right 0s ease;
+margin-right: 180px;
 }
 
 
-
 .like, .dislike, .comment, .share, .options {
-  width: 100%;
+  width:90%;
   height: 60px;
-  background-color: transparent;
+  background-color: #F5F5F5;
   border-radius: 12px;
   display: flex;
   flex-direction: column;   /* Stack icon and label */
   align-items: center;
   justify-content: center;
-  padding: 5px 0;
+  padding: 0px 0;
 }
+
+.dark-mode .like,
+.dark-mode .dislike,
+.dark-mode .comment,
+.dark-mode .share,
+.dark-mode .options {
+  background-color: #353839;
+}
+
 
 .like img, .dislike img, .comment img, .share img, .options img {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height:25px;
 }
 
-.like label, .dislike label, .comment label, .share label, .options label{
+.like label, .dislike label, .comment label, .share label, .options label {
   font-size: 0.75rem;
-  color: black;
-  margin-top: 10px;
+  color: #333333;
+  margin-top: 6px;
+  text-align: center;
+  width: 100%; /* Optional, if label alignment varies */
+  white-space: nowrap; /* Optional, if truncation is better than wrapping */
 }
+
 
 .dark-mode .like label,
 .dark-mode .dislike label,
@@ -878,6 +984,8 @@ padding: 5px;
 .dark-mode .options label {
   color: white;
 }
+
+
 
 
 .dark-mode .like img,
@@ -889,20 +997,26 @@ padding: 5px;
   filter: invert(1);
 }
 
+
 .comment-container {
-  display: none; /* Initially hidden */
+  display: none;
   position: absolute;
-  top: 70px; /* Adjust as needed */
-  left: 570px; /* Adjust as needed */
+  top: 10px;
+  left: 570px;
   width: 40%;
-  height: 700px;
+  aspect-ratio: 9 / 16;
   background-color: transparent;
   border: 1px solid black;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5); /* Changed to rgba for shadow */
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
   border-radius: 12px;
-  z-index: 10;
-  opacity: 0; /* Start with 0 opacity */
-  transition: opacity 0.4s ease; /* Smooth transition for opacity */
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  /* Dynamic height */
+  height: auto;
+  max-height: 810px;
+  overflow-y:none; /* Add scrolling if content exceeds max-height */
+  padding: 5px;
 }
 
 .comment-container.show {
@@ -913,30 +1027,178 @@ padding: 5px;
 .dark-mode .comment-container {
   border: 1px solid white;
 }
-
 .comments {
-  position: relative;
-  width: 100%;
-  height: 200px; /* Increased height for visibility */
-  z-index: 1000; /* Increased z-index */
-  border-style: ridge;
-  background-color: green;
-  margin-top: 20px; /* Adjusted margin */
-  display: flex; /* Optional: use flex for centering content */
-  align-items: center; /* Center content vertically */
-  color: white; /* Text color for visibility */
-  padding: 10px; /* Added padding for better appearance */
+  width: 99.8%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+  background-color: transparent;
+  color: #333333;
+  padding-left: 0px;
+  border-radius: 0px;
+}
+
+.comments label {
+  color: #333333;
 }
 
 .dark-mode .comments {
-  border: 1px solid white;
+  border: none;
+  background-color: #353839;
+  color: white;
 }
+
+.dark-mode .comments label {
+  color: white;
+}
+
+.card {
+  position: relative; /* allow content to define height */
+  width: 100%;
+  min-height: 200px;
+  max-height: none; /* or keep 300px if needed */
+  background-color: transparent;
+  top: 1%; /* optional, can be handled by margins */
+  bottom: 5px;
+}
+
+
+.Profilee {
+  position: relative; /* Changed */
+  z-index: 1;
+  background-color: transparent;
+  width: 420px; /* Fixed width */
+  height: 50px;
+  top: 2%;
+  left: 1px; /* Fixed position */
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  border-radius: 8px;
+}
+
+.Profilee img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.Profilee label
+{
+  color: #36454F;
+  font-weight: bold;
+}
+
+.dark-mode .Profilee label
+{
+  color: #D3D3D3;
+}
+
+
+.captionn {
+  position: relative;
+  margin-top: 10px;
+  z-index: 1;
+  background-color: transparent;
+  width: 415px;
+  max-height: 200px;
+  min-height: 70px; 
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px; /* Added padding for spacing */
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.captionn label {
+  color: black;
+}
+
+.dark-mode .captionn label {
+  color: white;
+}
+
+.section {
+  position: relative;
+  margin-top: 10px;
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0px;
+  gap: 5px;
+  margin-bottom: 50px;
+}
+
+
+.viewss, .likess, .dislikee, .commentss, .sharee {
+  width: 20%;
+  height: 30px;
+  background-color: #F5F5F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+border-radius: 7px;
+}
+
+.dark-mode .viewss,
+.dark-mode .likess,
+.dark-mode .dislikee,
+.dark-mode .commentss,
+.dark-mode .sharee {
+  background-color: #353839;
+}
+
+.viewss img, .likess img, .dislikee img, .commentss img, .sharee img
+{
+width:25px;
+height:25px;
+border-radius: 50%;
+padding:5px;
+}
+
+.dark-mode .viewss img,
+.dark-mode .likess img,
+.dark-mode .dislikee img,
+.dark-mode .commentss img,
+.dark-mode .sharee img {
+  filter: invert(1);
+}
+
+.viewss label,
+.likess label,
+.dislikee label,
+.commentss label,
+.sharee label {
+  margin-left: 5px;
+  font-size: 14px;
+  color: #333333;
+  
+}
+
+.dark-mode .viewss label,
+.dark-mode .likess label,
+.dark-mode .dislikee label,
+.dark-mode .commentss label,
+.dark-mode .sharee label {
+  color: white;
+}
+
 
 /* Controls Styling */
 .controls {
   position: fixed;
   top: 50%;
-  right:30px;
+  right:10px;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -966,7 +1228,7 @@ padding: 5px;
 
 /* Dark Mode Styles */
 .dark-mode {
-  background-color:		#161616; /* Black background for Dark Mode */
+  background-color: #121212; /* Black background for Dark Mode */
   color: white; /* White text for Dark Mode */
 }
 
@@ -993,19 +1255,15 @@ padding: 5px;
     }
   
 .dark-mode .container .nav{
-  background-color: #161616; 
+  background-color: #121212; 
    }
 
-   .dark-mode .container-1{
-    background-color: #161616; 
-     }
-
    .dark-mode .container .Table{
-    background-color:		#161616; 
+    background-color: #121212; 
      }
 
      .dark-mode .container .Table .overlay-text{
-      background-color:		#161616; 
+      background-color: #121212; 
        }
 
 
@@ -1022,7 +1280,7 @@ padding: 5px;
 
 
 .dark-mode .sidebar{
-  background-color: #161616; 
+  background-color: #121212; 
   }
 
   .dark-mode .sidebar img

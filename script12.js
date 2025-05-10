@@ -76,48 +76,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   
-  const commentIcon = document.getElementById('comment-icon');
-  const commentContainer = document.querySelector('.comment-container');
-  const shortVideo = document.querySelector('.short-video');
-  const metadata = document.querySelector('.metadata');
-  
-  commentIcon.addEventListener('click', () => {
-    commentContainer.classList.toggle('show');
-  
-    if (commentContainer.classList.contains('show')) {
-      shortVideo.classList.add('shift-left');
-      metadata.classList.add('shift-left');
-    } else {
-      shortVideo.classList.remove('shift-left');
-      metadata.classList.remove('shift-left');
-    }
-  });
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    const toggleBtn = document.querySelector(".caption-toggle");
-    const moreText = document.querySelector(".caption-more");
-    const profile = document.querySelector(".Profile");
 
-    toggleBtn.addEventListener("click", () => {
-      const isHidden = moreText.classList.toggle("hidden");
-
-      // Toggle button text
-      toggleBtn.textContent = isHidden ? "see more" : "see less";
-
-      // Move profile container up or reset it
-      if (!isHidden) {
-        profile.classList.add("shift-up");
-      } else {
-        profile.classList.remove("shift-up");
-      }
-    });
-  });
-
-    // 
-  document.addEventListener("click", () => {
-    const video = document.querySelector(".short-video video");
-    if (video) {
-      video.muted = false;
-      video.play().catch((e) => console.log("Autoplayy with sound failed:", e));
-    }
-  }, { once: true });   
