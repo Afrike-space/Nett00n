@@ -85,13 +85,16 @@ document.addEventListener("DOMContentLoaded", function () {
     commentContainer.classList.toggle('show');
   
     if (commentContainer.classList.contains('show')) {
+      commentContainer.classList.add('shift-left'); // 🔄 Add shift-left to the comment container
       shortVideo.classList.add('shift-left');
       metadata.classList.add('shift-left');
     } else {
+      commentContainer.classList.remove('shift-left'); // 🔄 Remove shift-left from the comment container
       shortVideo.classList.remove('shift-left');
       metadata.classList.remove('shift-left');
     }
   });
+  
   
   document.addEventListener("DOMContentLoaded", function () {
     const toggleBtn = document.querySelector(".caption-toggle");
@@ -121,3 +124,11 @@ document.addEventListener("DOMContentLoaded", function () {
       video.play().catch((e) => console.log("Autoplayy with sound failed:", e));
     }
   }, { once: true });   
+
+
+  const textarea = document.querySelector('.commentt textarea');
+
+  textarea.addEventListener('input', () => {
+    textarea.style.height = 'auto'; // Reset height
+    textarea.style.height = Math.min(textarea.scrollHeight, 100) + 'px'; // Limit to 100px
+  });
