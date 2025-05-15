@@ -9,43 +9,41 @@ body {
   text-align: center; /* Keeps text centered */
   background-color: white; 
   font-family: 'Poppins', sans-serif;
-  overflow-y:auto;
-  overflow-x: hidden;
+  overflow-y:scroll;
+  overflow-x:hidden;
   margin: 0; 
   min-height: 100vh; /* Ensures full height on all screens */
 }
 
-
+/* HEADER CONTAINER */
 .container {
   position: fixed;
-  background-color:white;
+  background-color: white;
   display: flex;
-  flex: 1;
-  flex-wrap: nowrap;
   flex-direction: column;
-  object-fit: cover;
-  top: 0px;
-  float: left;
   width: 100%;
   height: auto;
-  max-height:54px ;
-  border-radius: 0px;
-  left: 0px;
-  border-style: none;
-  z-index: 10;
-  margin-bottom: 0px;
+  max-height: 7vh;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   justify-content: space-between;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 0;
+  padding: 0vh 0vw; /* Add padding for breathing space */
 }
 
 .Table {
   position: relative;
   min-width: 14%;  /* Slightly increased for better proportions */
-  max-width: 15.5%;
+  max-width: 15%;
   height: 3rem;  /* Adjusted for better spacing */
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: transparent;
+  justify-content: flex-start;
 }
 
 .overlay-text {
@@ -65,6 +63,7 @@ body {
   z-index: 3;
   background-color: transparent;
   margin-left: 0px;
+  padding-left: 3px;
 }
 
 /* NET and TOON Styling */
@@ -108,161 +107,171 @@ a, .net-text, .toon-text {
   text-decoration: none;
 }
 
+
+/* NAVIGATION BAR */
 .nav {
   position: absolute;
-  width: 87%;
-  float: left;
-  margin-left: 13.1vw; /* Keeps navigation aligned on all screen sizes */
+  width: 87vw;
+  left: 13vw;
   height: auto;
-  background-color:transparent; 
+  background-color:transparent;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  align-items: center; /* Center items vertically */
-  justify-content: space-around; /* Ensure equal spacing */
-  gap: 5vw; /* Adjusts dynamically */
-  max-height: 5.8567vh; /* Scales well across different devices */
-  margin-bottom: 1vh;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5vw;
+  max-height: 7vh;
+  padding: 0vh 0vw;
 }
-
-/* Main search container */
+/* Main Search Container */
 .search {
   display: flex;
   position: relative;
   width: 90%;
-  max-width: 850px; /* was 600px */
-  height: auto;
-  background-color:transparent; 
+  max-width: 90vw;
   margin: 2vh auto;
-  border-radius: 7px;
+  padding: 0.1rem 0.1rem;
+  border-radius: 0.5rem;
   align-items: center;
-  border: 0.3px solid #ccc;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color:transparent;
+  border: 0.03rem solid #ccc;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
-  margin-top: 15px;
   margin-left: 40px;
 }
 
-/* Search input field */
+/* Search Input */
 .search input[type="search"] {
   flex: 1;
-  height: 4.5vh;
-  min-height: 30px;
-  max-height: 30px;
-  border-radius: 7px;
+  min-height: 2.5rem;
+  max-height: 4.5vh;
+  width: 100%;
   background-color: transparent;
   border: none;
-  padding: 0.7rem 3rem 0.7rem 2.5rem;
+  border-radius: 0.5rem;
+  padding: 0.1rem 0.1rem 0.1rem 0.1rem;
   color: #333;
   font-size: 1rem;
   outline: none;
   transition: all 0.3s ease-in-out;
 }
 
-/* Search input focus effect */
+/* Focus Effect */
 .search input[type="search"]:focus {
-  border: 3px solid grey; /* Change to a noticeable color (e.g., blue) */
-  box-shadow: 0px 0px 8px grey; /* Soft blue shadow */
-  outline: none; /* Remove default outline */
-  background-color: #f0f0f0; /* Light background for better contrast */
+  border: 0.125rem solid #555;
+  background-color: #f8f8f8;
+  box-shadow: 0 0 0.5rem rgba(128, 128, 128, 0.5);
 }
 
-
-/* Clear button */
+/* Clear Button */
 .clear-btn {
   position: absolute;
-  right: 1rem;
+  right: 2rem;
   background: none;
   border: none;
   cursor: pointer;
   font-size: 1.2rem;
   color: #666;
-  display: none; /* Hidden by default */
+  display: none;
 }
 
-/* Show clear button when text is entered */
 .search input[type="search"]:valid ~ .clear-btn {
   display: block;
 }
 
-
-/* Dark mode input */
-body.dark-mode .search input[type="search"] {
-  color: #fff;
-}
-
-/* Placeholder styling */
-.search input[type="search"]::placeholder {
-  color: #36454F;
-  font-size: 0.9rem; /* Ensures readability */
-}
-
-body.dark-mode .search input[type="search"]::placeholder {
-  color: #D3D3D3;
-}
-
-/* Search Icon Styling */
+/* Search Icon */
 .search .search-icon {
   position: absolute;
-  right: 12px; /* Adjust distance for better alignment */
+  right: 0.75rem;
   top: 50%;
   transform: translateY(-50%);
-  width: 1.5rem;
-  height: 1.5rem;
-  min-width: 20px;
-  min-height: 20px;
-  background-color:transparent;
-  border-radius: 50%;
-  cursor: pointer;
+  width: 1.25rem;
+  height: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  color: #555;
 }
 
-/* Hide the clear button across all browsers */
+/* Placeholder */
+.search input[type="search"]::placeholder {
+  color: #36454F;
+  font-size: 0.95rem;
+}
+
+/* Autofill Prevention */
+.search input[type="search"]:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: #333 !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* Dark Mode Styles */
+body.dark-mode .search input[type="search"] {
+  color: #fff;
+  background-color: #111;
+}
+
+body.dark-mode .search input[type="search"]:focus {
+  border-color: #888;
+  background-color: #1c1c1c;
+  box-shadow: 0 0 0.5rem rgba(200, 200, 200, 0.2);
+}
+
+body.dark-mode .search input[type="search"]::placeholder {
+  color: #ccc;
+}
+
+body.dark-mode .search .search-icon {
+  color: #ccc;
+}
+
+body.dark-mode .clear-btn {
+  color: #bbb;
+}
+
+/* Remove browser-specific search decorations */
 .search input[type="search"]::-webkit-search-decoration,
 .search input[type="search"]::-webkit-search-cancel-button,
 .search input[type="search"]::-webkit-search-results-button,
 .search input[type="search"]::-webkit-search-results-decoration {
-  display: none; 
+  display: none;
 }
-
-/* Prevent autofill background color change */
-.search input[type="search"]:-webkit-autofill,
-.search input[type="search"]:-webkit-autofill:hover,
-.search input[type="search"]:-webkit-autofill:focus,
-.search input[type="search"]:-webkit-autofill:active {
-  background-color:none !important;
-  color: #333 !important;
-  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
-  box-shadow: 0 0 0px 1000px white inset !important;
-  transition: background-color 5000s ease-in-out 0s; /* Prevent flickering */
-}
-
 
 
 .upload {
   position: relative;
-  width: 3vw;
-  height: 3vw;
-  background-color: transparent;
-  margin-top: 0;
+  width: clamp(35px, 3vw, 50px);
+  height: clamp(35px, 3vw, 50px);
+  background-color:transparent;
   margin-left: 1vw;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
 
+.upload:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Upload Icon */
 .upload img {
-  width: 2.4vw;
-  height: 2.4vw;
-  padding: 0.5vh;
+  width: 65%;
+  height: 65%;
   object-fit: contain;
+  padding: 0;
+  transition: transform 0.3s ease;
+}
 
+.upload:hover img {
+  transform: scale(1.1);
 }
 
 
@@ -323,50 +332,52 @@ body.dark-mode .search input[type="search"]::placeholder {
     font-size: 0.75rem;
     padding: 0.2rem 0.5rem;
   }
-}
-/* Notifications Icon */
+}/* Notifications Icon */
 .Notifications {
   position: relative;
-  width: 3vw;
-  height: 3vw;
-  background-color: transparent;
-  margin: 0.3125rem 0 0.1875rem 1.25rem; /* Top, Right, Bottom, Left */
+  width: clamp(35px, 3vw, 50px);
+  height: clamp(35px, 3vw, 50px);
+  background-color:transparent;
+  margin: 0.3125rem 0 0.1875rem 1.25rem;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 /* Icon inside the Notification button */
 .Notifications img {
   width: 2vw;
   height: 2vw;
-
+  object-fit: contain;
 }
-
-
 
 /* Notification Dropdown */
 .Notification-container {
   display: none; /* Hidden by default */
   position: absolute;
-  width: 24%;
-  min-width: 11.25em; /* 180px */
-  max-height: 40em; /* Prevents excessive height */
-  background-color: #333; /* Dark mode background */
+  top: 100%; /* Just below the icon */
+  right: 0;
+  width: clamp(180px, 24vw, 300px);
+  max-height: 40em;
+  background-color: #333;
   color: white;
-  top: 100%; /* Positioned below the icon */
-  right: 1%;
   border-radius: 0.5em;
   box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.2);
-  overflow-y: auto; /* Enables scrolling for multiple notifications */
-  z-index: 30;
+  overflow-y: auto;
+  z-index: 100;
   padding: 1rem;
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+/* Show Notification Dropdown */
+.Notifications.active .Notification-container {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Active class to show dropdown smoothly */
@@ -416,23 +427,22 @@ body.dark-mode .search input[type="search"]::placeholder {
   width: 3vw;
   height: 3vw;
   background-color: transparent;
-  margin: 0 1.5625rem 0.1875rem 0; /* Right, Bottom */
-
+  margin: 0 1rem 0.1875rem 0;
+  display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   cursor: pointer;
   float: right;
-  margin-right: 1rem;
-
 }
+
 
 /* Profile Image inside Account Icon */
 .Account img {
   width: 2vw;
   height: 2vw;
   border-radius: 50%;
-
+  object-fit: cover;
   margin-top: 6px;
 }
 
@@ -446,81 +456,77 @@ body.dark-mode .search input[type="search"]::placeholder {
 .dropdown-content {
   display: none; /* Hidden by default */
   position: absolute;
-  width: 24%;
+  width: clamp(180px, 24vw, 280px);
   height: auto;
   background-color: #333; /* Example background for dark mode */
   min-width: 11.25em; /* Converted from 180px */
   box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.2);
-  margin-top:26%;  /* Adjusted to percentage for better scaling */
-  float: left;
-  margin-left:99%; /* Centering based on container width */
+  top: 110%;
+  right:1%; /* Centering based on container width */
   transform: translateX(-50%); /* Ensures it remains centered */
   border-radius: 0.5em; /* Converted from 7px */
   max-height: 25em; /* Converted from 600px */
   z-index: 30;
-overflow-y: scroll;
+overflow-y: auto;
 overflow-x: hidden;
 overflow: auto;
 scrollbar-width: thin;
-scrollbar-color: rgba(0, 0, 0, 0.5) white;
+scrollbar-color: rgba(0, 0, 0, 0.4) #fff;
+transition: opacity 0.3s ease, transform 0.2s ease;
+transform: translateY(-10px);
+
 }
 
 
 .dropdown-content a {
   
   color: black;
-  padding: 12px 16px;
+  padding: 12px 12px;
   text-decoration: none;
   display: block; /* Make links block elements */
+  opacity: 1;
+  transform: translateX(-7%) translateY(0);
 }
-/* Profile Section */
+
+/* Profile Section inside Dropdown */
 .proofile {
-  width: 85%;
-  min-height: 1.875em; /* 30px */
+  width: 90%;
+  margin: 0.5em auto;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   background-color: white;
-  padding: 0.625em; /* 10px */
-  border-radius: 0.4375em; /* 7px */
-  max-width: 90%;
+  padding: 0.625em;
+  border-radius: 0.5em;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  color: black;
 }
+
 
 /* Hover Effect */
 .proofile:hover {
-  background-color:white; /* Subtle purple hover effect */
-  color:black;
+  background-color: #f0f0f0;
   transform: scale(1.05);
-  cursor: pointer;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
 }
-
-
 
 /* Profile Image */
 .proofile img {
-  width: 1.6875em; /* 27px */
+  width: 1.6875em;
   height: 1.6875em;
   border-radius: 50%;
-  margin-right: 0.625em; /* 10px */
+  margin-right: 0.625em;
 }
+
 
 /* Profile Name */
 .proofile label {
   font-weight: bold;
-  font-size: 0.875em; /* 14px */
+  font-size: 0.875em;
   color: black;
-  margin-left: 0.3125em; /* 5px */
-  text-align: left;
-  max-width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: color 0.3s ease-in-out;
 }
 
 .dropdown-content li {
@@ -576,120 +582,14 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
     bottom: -1.75rem; /* Adjust positioning */
   }
 }
-.suggestionss {
-  position: fixed;
-  display:none;
-  width: calc(100% - 0%); 
-  height: 3.75rem; /* Converted from 60px */
-  background-color:white;
-  left:0%;
-  top: 2.5rem;
-  flex-wrap: nowrap;
-  justify-content:space-evenly;
-  overflow: hidden;
-  padding: 0 0.625rem; /* Converted from 10px */
-  gap:5px;
-  z-index: 1;
-}
-
-.rectanglee {
-  flex-grow: 1;
-  height: 1.875rem; /* Converted from 30px */
-  background-color: #F5F5F5;
-  border-radius: 0.375rem; /* Converted from 6px */
-  margin-top: 0.9375rem; /* Converted from 15px */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 12%;
-  min-width: 5rem; /* Converted from 100px */
-  cursor: pointer;
-}
-
-.rectanglee label {
-  flex:1;
-  font-weight: 700;
-  text-align: center;
-  color: #333333;
-  font-size: 0.9375rem; /* Converted from 15px */
-  padding: 0.1875rem; /* Converted from 3px */
-  margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  cursor: pointer;
-}
-
-/* Hover Effect */
-.rectanglee:hover {
-  background-color: #ddd;
-  color: #000 !important; /* Ensures text remains visible */
-  transform: scale(1.05); /* Slight enlargement for better interaction */
-}
-/* Hover Effect */
-.dark-mode.rectanglee:hover {
-
-  transform: scale(1.05); /* Slight enlargement for better interaction */
-}
-/* ✅ Responsive Adjustments */
-@media screen and (max-width: 1024px) {
-  .suggestionss {
-    width: calc(100% - 12%);
-    left: 10%;
-  }
-  .rectanglee {
-    width: clamp(4.5rem, 9%, 10%);
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .suggestionss {
-    width: calc(100% - 15%);
-    left: 12%;
-    height: 3.5rem;
-  }
-  .rectanglee {
-    width: clamp(4rem, 8%, 9%);
-    font-size: 0.875rem; /* Adjust text size for smaller screens */
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .suggestionss {
-    width: calc(100% - 18%);
-    left: 14%;
-    height: 3.2rem;
-  }
-  .rectanglee {
-    width: 4rem; /* Fixed size for very small screens */
-    font-size: 0.8125rem; /* 13px */
-  }
-}
-
-.dark-mode .rectanglee:hover
-{
-  color:white;
-}
-
-.rectanglee:nth-child(1) {
-  background-color: black;
-}
-
-.rectanglee:nth-child(1) label {
-  color: white;
-}
-
 
 .sidebar {
   display:block;
   position: fixed;
-  width: 14%;
+  width: 13.1%;
   height: 100vh; /* Full viewport height */
-  background-color:transparent;
-  top: 3rem;
+  background-color: white;
+  top: 4rem;
   left: 0;
   overflow-x: hidden;
   overflow-y: auto;
@@ -702,7 +602,7 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
 }
 
 .sidebar:hover {
-  width: 14%; /* Expands slightly on hover for better UX */
+  width: 13.2%; /* Expands slightly on hover for better UX */
 }
 
 .sidebar::-webkit-scrollbar {
@@ -745,7 +645,7 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
   margin-left: 0rem; /* Converted from 10px */
 }
 
-.home label {
+.home span {
   font-family: 'Poppins', 'Segoe UI', sans-serif;
   font-weight: 500;          /* Medium */
   font-size: 1rem;           /* ~16px */
@@ -764,66 +664,121 @@ scrollbar-color: rgba(0, 0, 0, 0.5) white;
   background-color: grey;
 }
 
+.dark-mode .home span
+{
+  color:#FFFFFF;
+}
+
 
 .shorts-container {
   position: relative;
-  width:86%;
-  height: 100vh;
-  background-color: transparent;
-  margin: 49px 0 0 180px;
+  width:89%;
+  min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  justify-content: flex-start;
-  padding: 0px;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
+  background-color: transparent; /* subtle grey for dark mode */
+  margin: 1px 0 0 151px !important;
+  border: none;
+  box-sizing: border-box;
+  overflow-x:none;
+  scroll-snap-type: x mandatory;
 }
 
-.shorts
+:root {
+  --primary-text: #fff;
+  --icon-size: clamp(32px, 4vw, 48px);
+  --margin-small: 1rem;
+}
+
+.controls {
+  position: fixed;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.controls img {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  cursor: pointer;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.6));
+  transition: transform 0.2s ease;
+}
+
+.controls img:hover {
+  transform: scale(1.1);
+}
+
+.dark-mode .controls img
 {
-  position: relative;
-  width:93%;
-  height: 850px;
+  filter: invert(1)
+}
+
+@media (max-width: 600px) {
+  .controls {
+    top: auto;
+    bottom: 1rem;
+    right: 0;
+    left: 0;
+    flex-direction: row;
+    justify-content: center;
+    transform: none;
+  }
+}
+.shorts {
+  display: flex;
+  flex-wrap: nowrap; /* No wrap on large screens */
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  margin: 46px auto 0 auto;
+  height: 94.5%;
   background-color: transparent;
-display:flex;
-flex-wrap: nowrap;
-margin: 0px 0 0 0px;
-z-index: 0;
-padding: 0px;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .short-video {
   position: relative;
   width: 100%;
-  max-width: 500px; /* TikTok-like width */
+  max-width: 500px;
   aspect-ratio: 9 / 16;
   overflow: hidden;
   border-radius: 12px;
-  margin: 10px 0 10px 180px;
-  transition: margin-left 0s ease;
+  margin: 0px auto;
+  height: auto;
+  max-height: 90vh;
+  flex-shrink: 0;
 }
-
 
 .short-video video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* or contain, depending on your goal */
+  object-fit: cover;
   border-radius: 12px;
   display: block;
 }
 
 .short-video.shift-left {
-  margin-left: 5px; /* Adjusted as needed */
+  margin-left: 5px;
 }
-
-
+/* 🔷 Profile Container */
 .Profile {
   position: absolute;
   z-index: 1;
   background-color: transparent;
-  width:97%; /* Fixed width */
+  width: 97%;
   height: 50px;
   bottom: 11%;
-  left: 1px; /* Fixed position */
+  left: 1px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -831,6 +786,11 @@ padding: 0px;
   border-radius: 8px;
 }
 
+.Profile.shift-up {
+  bottom: 17.5%;
+}
+
+/* 🔷 Profile Image */
 .Profile img {
   width: 40px;
   height: 40px;
@@ -839,19 +799,15 @@ padding: 0px;
   margin-right: 10px;
 }
 
-.Profile label
-{
-  color:white;
-  margin-left: 1%;
+/* 🔷 Profile Text */
+.Profile span {
   font-weight: bold;
+  margin-left: 1%;
+  color: white;
+  font-size: 1rem;
 }
 
-
-.Profile.shift-up {
-  bottom: 17.5%; /* Moves it up when see more is shown */
-}
-
-
+/* 🔷 Time Container */
 .timee {
   width: 45%;
   height: 30px;
@@ -860,30 +816,30 @@ padding: 0px;
   left: 30%;
   top: 1%;
   display: flex;
-  align-items: center; /* Vertically center label */
-  justify-content: center; /* Horizontally center label */
+  align-items: center;
+  justify-content: center;
   border-radius: 6px;
 }
 
-.timee label {
+/* 🔷 Time Text */
+.timee span {
   margin: 0;
   font-size: 0.85rem;
-  color: white;
   font-weight: 500;
+  color: white;
 }
 
-.dark-mode .timee label {
-
+/* 🌙 Dark Mode */
+.dark-mode .Profile span,
+.dark-mode .timee span {
   color: #fff;
-
 }
-
-
+/* 🔷 Caption Container */
 .caption {
   position: absolute;
-  z-index: 0;
-  background-color: transparent;
-  width:93%; 
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 93%;
   height: auto;
   bottom: 1%;
   left: 1px;
@@ -895,15 +851,27 @@ padding: 0px;
   color: #fff;
   font-weight: 500;
   font-size: 16px;
+  transition: all 0.3s ease;
 }
 
-.caption label
-{
-color:black;
-
-
+/* 🔷 Caption Text Labels */
+.caption label {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 5px;
 }
 
+/* 🌙 Dark Mode Overrides */
+.dark-mode .caption {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .caption label,
+.dark-mode .Profile label {
+  color: #fff;
+}
+
+/* 🔘 Caption Toggle Button */
 .caption-toggle {
   background: none;
   border: none;
@@ -913,72 +881,96 @@ color:black;
   padding: 0;
   margin-top: 5px;
   text-decoration: none;
+  transition: all 0.2s ease;
 }
 
+.caption-toggle:hover,
+.caption-toggle:focus {
+  text-decoration: none;
+  outline: none;
+  color: #ffd700; /* Golden yellow */
+}
+
+/* 🔒 Hidden Class */
 .hidden {
   display: none;
 }
 
-@media (max-width: 480px) {
-  .short-video {
-    width: 90%;
-    margin: 40px auto;
-  }
-
-  .Profile,
-  .caption {
-    width: 90%;
-    font-size: 14px;
-    height: auto;
-    padding: 10px;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .Profile img {
-    margin: 0 0 8px 0;
-  }
-}
 
 
-
+/* 🔷 Metadata Container */
 .metadata {
+  position: absolute;
+  top: 25%;
+  left: auto;
+  right: 23%;
   width: 5%;
-  height: 500px; /* Adjust as necessary */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   background-color: transparent;
-  position: absolute; /* Ensure it stays in the same place */
-  top: 20%; /* Adjust the top position */
-  right:350px; /* Adjust this value if necessary */
-  z-index:0;
-  border-radius: 7%;
-}
+  border-radius: 12px;
+  gap: 24px; /* Clean spacing */
+  padding: 0;
+  z-index: 0;
 
+}
 
 .metadata.shift-left {
-margin-right: 175px;
-}
+  margin-right: 290px;
+  }
 
-
-
-
-.like, .dislike, .comment, .share, .options {
-  width: 90%;
+/* 🔘 Common Button Styles */
+.like,
+.dislike,
+.comment,
+.share,
+.options {
+  width: 70%;
   height: 60px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 4px;
+  cursor: pointer;
   padding: 0;
-  gap: 4px; /* Add spacing between icon and label instead of using margin */
+  margin: 6px 0;
+
 }
 
 
+
+/* 🔘 Icon Styling */
+.like img,
+.dislike img,
+.comment img,
+.share img,
+.options img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+/* 🔘 Label Styling */
+.like label,
+.dislike label,
+.comment label,
+.share label,
+.options label {
+  font-size: 0.75rem;
+  color: #222;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 🌙 Dark Mode Styling */
 .dark-mode .like,
 .dark-mode .dislike,
 .dark-mode .comment,
@@ -987,268 +979,282 @@ margin-right: 175px;
   background-color: #353839;
 }
 
-
-.like img, .dislike img, .comment img, .share img, .options img {
-  width: 25px;
-  height: 25px;
-  object-fit: contain; /* Prevent stretching */
-}
-
-.like label, .dislike label, .comment label, .share label, .options label {
-  font-size: 0.75rem;
-  color: #333333;
-  text-align: center;
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-
 .dark-mode .like label,
 .dark-mode .dislike label,
 .dark-mode .comment label,
 .dark-mode .share label,
 .dark-mode .options label {
-  color: white;
+  color: #fff;
 }
-
 
 .dark-mode .like img,
 .dark-mode .dislike img,
 .dark-mode .comment img,
 .dark-mode .share img,
-.dark-mode .options img
- {
+.dark-mode .options img {
   filter: invert(1);
 }
 
+
+/* Base hidden state */
 .comment-container {
+  position: absolute; /* So it can shift inside the parent */
+  top: 8%;
+  right: -100%; /* Fully hidden off-screen to the right */
   display: none;
-  position: absolute; /* must be relative for sticky/absolute child positioning */
-  display: block;     /* ensure it's shown */
-  top: 35px;
-  left: 570px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  min-height: 30vh;
+  max-height: 90vh;
   width: 40%;
-  aspect-ratio: 9 / 16;
+  max-width: 10vw;
   background-color: transparent;
-  border: 0.1px solid grey;
-  box-shadow: 0px 0px 8px grey;
-  border-radius: 12px;
+  margin: 0;
+  padding: 0rem;
+  border-radius: 0.75rem;
+  border: 1px solid black;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
   z-index: 0;
   opacity: 0;
-  transition: opacity 0.4s ease;
-  height: auto;
-  max-height: 810px;
-  overflow-y: auto;
-  overflow-x: hidden; /* ✅ FIXED */
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
-  padding:0px;
+  transition: right 0.4s ease, opacity 0.3s ease;
 }
 
-
-/* Visible class */
+/* When made visible */
 .comment-container.show {
-  display: block;
+  display: flex !important;
+  right: 80px; /* Slide into view with 50px space from right */
   opacity: 1;
 }
 
-.comment-container {
-  display: none;
-}
-
-.comment-container.show {
-  display: block;
-}
-
-
-.comment-container.shift-left {
-  left: 570px;
-  background-color:transparent; /* Visual cue for testing */
-}
-
-
+/* Dark mode adjustments */
 .dark-mode .comment-container {
-  border: 1px solid white;
+  border-color: white;
 }
+
+/* Scrollbar styling */
+.comment-container::-webkit-scrollbar {
+  width: 0.375rem;
+}
+
+.comment-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0.625rem;
+}
+
 
 .comments {
   width: 100%;
-  height: 40px;
+  height: 3rem; /* Relative to root font size (~48px if base is 16px) */
   display: flex;
   align-items: center;
-  border: 1px solid white;
-  background-color: #F5F5F5; 
-  color: #333333;
-  padding-left: 0px;
-  border-radius:5px;
-  position: sticky;  /* ✅ change from fixed */
-  top: 0;             /* ✅ stick to top of container */
-  z-index: 2;   
-  flex-grow: 1.5;
+  justify-content: flex-start;
+  background-color: transparent;
+  color: #333;
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   font-weight: bold;
   text-align: center;
-  max-width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-    /* ✅ higher than cards */
+  flex-shrink: 0;
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px); /* Optional: adds subtle background glass effect */
 }
 
-.comments label
-{
-  font-size: 0.9rem; /* Adjust for better fit */  
-margin-left: 10px;
+.comments label {
+  font-size: 0.9rem;
+  color: #333;
+  margin-left: 0.625rem;
 }
 
+/* Dark mode support */
 .dark-mode .comments {
-  border: 0px solid white;
   background-color: #353839;
+  color: #fff;
+  border: none;
 }
 
- .comments label
-{
-  color: #333333;
+.dark-mode .comments label {
+  color: #fff;
 }
 
-.dark-mode .comments label
-{
 
-  color:white;
+.comments-list {
+  width: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0.5rem 0;
+  z-index: 0;
+  background-color: #f9f9f9; /* Light background for better readability */
+  border-radius: 0rem;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
 }
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hide scrollbar for WebKit */
+.comments-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* Dark mode styles */
+.dark-mode .comments-list {
+  background-color: #1e1e1e;
+}
+
 
 .card {
   position: relative;
+  z-index: 0;
   width: 100%;
-  min-height: 200px;
-  max-height: none;
-  background-color: transparent;
-  margin-top: 10px; /* optional for spacing */
-  border-radius: 12px;
-  margin-bottom: 10px;
+  max-width: 24rem; /* ~390px */
+  margin: 0.625rem auto 1.25rem auto; /* 10px auto 20px auto */
+  border-radius: 0.75rem;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent; /* orange fallback */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
 }
 
+/* Profile Section */
 .Profilee {
-  position: relative; /* Changed */
-  z-index: 1;
-  background-color: transparent;
-  width: 420px; /* Fixed width */
-  height: 50px;
-  top: 2%;
-  left: 1px; /* Fixed position */
   display: flex;
   align-items: center;
-  padding: 0 5px;
-  border-radius: 8px;
+  gap: 0.625rem; /* 10px */
+  padding: 0 0.625rem;
+  height: 3.125rem; /* 50px */
+  width: 100%;
+  max-width: 26.25rem; /* 420px */
+  background-color: transparent;
+  border-radius: 0.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .Profilee img {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem; /* 40px */
+  height: 2.5rem;
   object-fit: cover;
   border-radius: 50%;
-  margin-right: 10px;
 }
 
-.Profilee label
-{
+.Profilee label {
+  font-size: 0.875rem;
+  font-weight: 600;
   color: #36454F;
-  font-weight: bold;
 }
 
-.dark-mode .Profilee label
-{
+.dark-mode .Profilee label {
   color: #D3D3D3;
 }
-
-
 .time {
-  width: 45%;
-  height: 30px;
-  background-color:transparent;
-  position: relative;
-  left: 28%;
-  top: 1%;
+  width: fit-content;
+  height: 1.875rem; /* 30px */
+  padding: 0 0.625rem; /* 10px */
+  background-color: transparent;
   display: flex;
-  align-items: center; /* Vertically center label */
-  justify-content: center; /* Horizontally center label */
-  border-radius: 6px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  margin: 0.25rem auto 0; /* 4px top margin, centered */
 }
 
 .time label {
   margin: 0;
-  font-size: 0.85rem;
-  color: #333333;
+  font-size: 0.625rem; /* ~10px */
   font-weight: 500;
+  color: #333;
 }
 
 .dark-mode .time label {
-
-  color: #fff;
-
+  color: #ffffff;
 }
 
-
+/* Caption Section */
 .captionn {
   position: relative;
-  margin-top: 10px;
-  z-index: 1;
-  background-color: transparent;
-  width: 415px;
-  max-height: 200px;
-  min-height: 70px; 
-  left: 0;
+  margin-top: 0.3125rem; /* 5px */
+  width: 100%;
+  max-width: 26rem; /* ~415px */
+  min-height: 4.375rem; /* ~70px */
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 10px; /* Added padding for spacing */
-  border-radius: 8px;
-  color: white;
+  border-radius: 0.5rem;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1rem; /* 16px */
+  color: #000;
+  background-color: transparent;
+  box-sizing: border-box;
+  overflow: visible;
+  word-wrap: break-word;
+  line-height: 1.4;
 }
 
 .captionn label {
-  color: black;
+  color: inherit;
 }
 
-.dark-mode .captionn label {
-  color: white;
+.dark-mode .captionn {
+  color: #ffffff;
 }
 
 .section {
-  position: relative;
-  margin-top: 10px;
-  width: 100%;
-  height: 40px;
-  background-color:transparent;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   align-items: center;
-  padding: 0 0px;
-  gap: 5px;
-  margin-bottom: 20px;
-  border-radius: 12px;
+  gap: 0.5rem; /* 8px */
+  margin: 0.3125rem 0; /* 5px */
+  width: 100%;
+  background-color: transparent;
+  border-radius: 0.75rem; /* 12px */
+  padding: 0.1875rem; /* 3px */
 }
 
-
 .viewss, .likess, .dislikee, .commentss, .sharee {
-  width: 20%;
-  height: 30px;
-  background-color: #F5F5F5;
+  flex: 1 1 5%;
+  min-width: 5rem; /* 80px */
+  max-width: 5.625rem; /* 90px */
+  height: 1.875rem; /* 30px */
+  background-color: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
-border-radius: 7px;
-padding: 0 0px;
+  border-radius: 0.4375rem; /* 7px */
+  overflow: hidden;
+  gap: 0.3125rem; /* 5px */
+  padding: 0;
+
 }
 
-
-.viewss, .likess, .dislikee, .commentss, .sharee {
-  overflow: hidden; /* Prevent overflow artifacts */
+.viewss:hover,
+.likess:hover,
+.dislikee:hover,
+.commentss:hover,
+.sharee:hover {
+  background-color: #e0e0e0;
 }
-
 
 .dark-mode .viewss,
 .dark-mode .likess,
@@ -1263,11 +1269,9 @@ padding: 0 0px;
 .dislikee img, 
 .commentss img, 
 .sharee img {
-  width: 85%;
-  height:85%;
-  object-fit: contain; /* Ensures full visibility without distortion */
-  border-radius: 0;     /* Remove if you want square icons */
-  padding: 0;           /* Remove padding to allow full size fit */
+  width: 1.5625rem; /* 25px */
+  height: 1.5625rem;
+  object-fit: contain;
 }
 
 .dark-mode .viewss img,
@@ -1283,10 +1287,8 @@ padding: 0 0px;
 .dislikee label,
 .commentss label,
 .sharee label {
-  margin-right: 7px;
-  font-size: 14px;
-  color: #333333;
-  
+  font-size: 0.84375rem; /* 13.5px */
+  color: #333;
 }
 
 .dark-mode .viewss label,
@@ -1294,82 +1296,91 @@ padding: 0 0px;
 .dark-mode .dislikee label,
 .dark-mode .commentss label,
 .dark-mode .sharee label {
-  color: white;
+  color: #ffffff;
 }
 
 .commentt {
-  position: sticky; /* or use absolute if preferred */
-  bottom: 0;
+  position: relative;
   width: 100%;
-  min-height: 40px;
-  max-height: 100px;
-  display: flex;
-  align-items: center;
-  padding: 5px 10px;
-  border-radius: 5px;
   background-color: #F5F5F5;
-  font-weight: bold;
-  overflow: hidden;
-  z-index: 2;
-  top:500%
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 6px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.dark-mode .commentt {
+  background-color: #353839;
 }
 
 .commentt textarea {
   width: 100%;
-  min-height: 30px;
-  max-height: 90px;
+  min-height: 40px;
+  max-height: 150px;
   resize: none;
   border: none;
   outline: none;
   background-color: transparent;
   font-size: 0.9rem;
   font-family: inherit;
-  color: #333333;
-  overflow: hidden;
-}
-
-.dark-mode .commentt {
-  border: none;
-  background-color: #353839;
+  color: #333;
+  padding: 6px 10px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  line-height: 1.4;
+  overflow-y: auto;
 }
 
 .dark-mode .commentt textarea {
-  color: white;
+  color: #fff;
 }
 
+.comment-actions {
+  display: none;
+  justify-content: flex-end;
+  gap: 12px;
+  width: 100%;
+  padding: 5px 0;
+  background-color: transparent;
+  border-radius: 8px;
+}
 
-/* Controls Styling */
-.controls {
-  position: fixed;
-  top: 50%;
-  right:10px;
-  transform: translateY(-50%);
+.commentt.typing .comment-actions {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  z-index: 999;
 }
-.nav-icon {
-  width: 40px;
-  height: 40px;
+
+.cancel-btn,
+.send-btn {
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  filter: drop-shadow(0 0 5px black);
-  transition: transform 0.2s;
+  color: white;
+  transition: background-color 0.3s ease;
 }
 
-.dark-mode .nav-icon {
-  filter: invert(1);
+.cancel-btn {
+  background-color: #6c757d;
 }
 
-.nav-icon:hover {
-  transform: scale(1.1);
+.cancel-btn:hover {
+  background-color: #5a6268;
 }
 
-/* Base styles for all devices */
-body {
-  font-size: 16px;
-  /* Other base styles */
+.send-btn {
+  background-color: #007BFF;
 }
+
+.send-btn:hover {
+  background-color: #0069d9;
+}
+
 
 /* Extra large screens (≥1400px) */
 @media (min-width: 1400px) {
@@ -1377,6 +1388,8 @@ body {
     font-size: 18px;
     /* Additional styles for extra large screens */
   }
+
+  
 }
 
 /* Large screens (≥1200px) */
@@ -1393,7 +1406,9 @@ body {
 
 }
 
-
+.comment-container {
+  max-width: 60vw;
+}
 
 }
 
@@ -1407,17 +1422,17 @@ body {
 
   .shorts-container
   {
-    background-color: transparent;
+    background-color:grey;
   
   }
 
 .shorts
 {
-  width:95%;
-  background-color: transparent;
-margin-top: 0px;
-
-
+  width:90.5%;
+  background-color:pink;
+margin-top: 5px;
+height: 780px;
+border-style: none;
 }
 
 .short-video
@@ -1427,22 +1442,37 @@ margin-top: 0px;
   max-width: 450px; /* TikTok-like width */
   margin: 10px 0 10px 140px;
   transition: margin-left 0s ease;
+  background-color: orange;
+  height: auto;
 }
 
 .Profile {
   width: 98%;
-  bottom: 13%; /* Instead of margin-bottom */
-  background-color: transparent;
+  bottom: 13%;
 }
+
 
 .Profile img {
-  width: 30px;
-  height: 30px;
-
+  width: 35px;
+  height: 35px;
 }
 
+.Profile span {
+  font-size: 0.95rem;
+}
+
+
 .Profile.shift-up {
-  bottom: 22%; /* Moves it up when see more is shown */
+  bottom: 22%;
+}
+
+.timee {
+  width: 50%;
+  left: 25%;
+}
+
+.timee span {
+  font-size: 0.8rem;
 }
 
 
@@ -1470,19 +1500,18 @@ margin-top: 0px;
     left: 470px;
     width: 39%;
     padding: 0px;
-    height: auto;             /* ✅ same as original */
-    max-height:1000px;        /* ✅ same as original */
+    height: auto;          
     overflow-x: hidden;
-    overflow-y: auto;         /* Optional: enable vertical scroll if content exceeds */
+    overflow-y: auto;      
   }
 
   .comment-container.shift-left {
     left: 420px !important;
-    max-width: 400px;
+    max-width: 360px;
     width: 100%;              /* Optional: keep full width control */
     height: auto;             /* ✅ same as original */
     max-height: 810px;  
-    margin-top: 40px;      /* ✅ same as original */
+    margin-top: 30px;      /* ✅ same as original */
   }
     .comments
     {
@@ -1501,7 +1530,7 @@ margin-top: 0px;
       margin-bottom: 20px;
 
     }
-  
+
     .captionn
     {
       width: 100%;
@@ -1575,13 +1604,137 @@ gap:2px;
   }
 
 
-  .shorts-container
-  {
-  background-color: green;
+  .shorts {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    width: 94%;
+    height: auto;
+    gap: 16px;
+    background-color: #ddd; /* Optional, can remove */
+  }
   
-  
+  .short-video {
+    max-width: 400px;
+    margin: 12px auto;
+    height: auto;
+    aspect-ratio: 9 / 16;
   }
 
+  .Profile {
+    width: 96%;
+    bottom: 10%;
+  }
+
+  .Profile.shift-up {
+    bottom: 20%;
+  }
+
+  .Profile img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .Profile span {
+    font-size: 0.9rem;
+  }
+
+  .timee {
+    width: 60%;
+    left: 20%;
+  }
+
+  .timee span {
+    font-size: 0.8rem;
+  }
+  
+
+  .caption {
+    width: 90%;
+    padding: 10px;
+    font-size: 14px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .caption label {
+    font-size: 0.9rem;
+  }
+
+  .caption-toggle {
+    font-size: 13px;
+  }
+
+  .metadata {
+    position: fixed;
+    bottom: 10%;
+    top: auto;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    z-index: 5;
+    background-color: transparent;
+  }
+
+  .like,
+  .dislike,
+  .comment,
+  .share,
+  .options {
+    width: 55px;
+    height: 50px;
+    padding: 6px;
+  }
+
+  .like label,
+  .dislike label,
+  .comment label,
+  .share label,
+  .options label {
+    font-size: 0.65rem;
+  }
+
+  .like img,
+  .dislike img,
+  .comment img,
+  .share img,
+  .options img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .comment-container {
+    max-width: 80vw;
+    min-height: 40vh;
+    padding: 0.75rem;
+    margin: 1vh auto;
+  }
+
+  .comment-container {
+    width: 95%;
+    left: 2.5%;
+    top: 2vh;
+    max-height: 70vh;
+    aspect-ratio: auto;
+    padding: 0.75rem;
+  }
+
+  .comments {
+    height: 2.5rem;
+    padding-left: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .comments label {
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+  }
 
 }
 
@@ -1591,6 +1744,51 @@ gap:2px;
     font-size: 14px;
     /* Additional styles for extra small screens */
   }
+
+  .shorts {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 95%;
+    margin-top: 16px;
+    height: auto;
+  }
+  
+  .short-video {
+    max-width: 90%;
+    margin: 10px auto;
+    aspect-ratio: 9 / 16;
+    max-height: 85vh;
+  }
+
+  .Profile {
+    width: 95%;
+    bottom: 9%;
+  }
+
+  .Profile.shift-up {
+    bottom: 18%;
+  }
+
+  .Profile img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .Profile span {
+    font-size: 0.85rem;
+  }
+
+  .timee {
+    width: 70%;
+    left: 15%;
+  }
+
+  .timee span {
+    font-size: 0.75rem;
+  }
+  
+
 }
 
 /* Very small screens (<576px) */
@@ -1599,6 +1797,54 @@ gap:2px;
     font-size: 13px;
     /* Additional styles for very small screens */
   }
+
+  .shorts {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 8px 0;
+    gap: 12px;
+    background-color: transparent;
+    height: auto;
+  }
+  
+  .short-video {
+    width: 94%;
+    max-width: 94%;
+    margin: 10px auto;
+    aspect-ratio: 9 / 16;
+    max-height: 80vh;
+  }
+  
+  .Profile {
+    width: 94%;
+    bottom: 8%;
+  }
+
+  .Profile.shift-up {
+    bottom: 16%;
+  }
+
+  .Profile img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .Profile span {
+    font-size: 0.8rem;
+  }
+
+  .timee {
+    width: 75%;
+    left: 12%;
+  }
+
+  .timee span {
+    font-size: 0.7rem;
+  }
+
+  
+
 }
 
 /* Light Mode Styles */
